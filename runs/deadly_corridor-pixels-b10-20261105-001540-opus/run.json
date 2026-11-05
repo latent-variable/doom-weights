@@ -1,0 +1,66 @@
+{
+ "id": "deadly_corridor-pixels-b10-20261105-001540-opus",
+ "agent": "claude",
+ "scenario": "deadly_corridor",
+ "mode": "pixels",
+ "budget": 10,
+ "model": "claude-opus-5-5",
+ "effort": null,
+ "workspace": "/private/tmp/doom-weights-ws/deadly_corridor-pixels-b10-20261105-001540-opus/workspace",
+ "started": "20261105-001540",
+ "exit": 0,
+ "builder_minutes": 17.8,
+ "usage": {
+  "turns": 131,
+  "cost_usd": 5.0597606,
+  "input": 154,
+  "output": 95243,
+  "cache_read": 8584863,
+  "cache_write": 179664,
+  "denials": [
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash"
+  ],
+  "result": "I've written `build.py`, `weights.npz` and `explanation.md`. My honest result: the zombie-fighting network I designed did not beat simply running forward while shooting, so the submitted weights do almost exactly that. I predict a held-out average of about 250 (likely 150\u2013350), with moderate confidence.\n\n**What the network computes:**\n- **Layer 1:**\n  - **Zombie detector, one unit per screen column:** a colour mix that reads zero on the brown walls and on grey bullet smoke, and positive on the zombies' blue, purple and red parts.\n  - **Heading cue:** the bright ceiling band sits around the corridor's vanishing point, so its position shows which way the corridor runs.\n  - **Wall flag:** detects when the player is facing a wall up close, and ignores the red blood spray that appears when the player is hit.\n  - **Health flag:** built but switched off.\n- **Layer 2:** the decisions \u2014 turn toward the zombie nearest the crosshair, shoot when it is centred, turn back down the corridor when nothing is visible, and turn away from walls.\n\nA switch in `build.py` picks between two modes, fight and run-and-gun.\n\n**Practice results** (5 games per round, apparently the same 5 starting conditions each round):\n\n| Policy | Games | Average score |\n|---|---|---|\n| Always forward (round 1) | 5 | 282 |\n| Run-and-gun with frequent heading turns (round 10) | 5 | 229 |\n| Fighting, all working versions | 30 | about 213 |\n\n- Fighting paid off on some games: 4 kills and 630\u2013800 points.\n- But in about 40% of games the agent died during the opening fight with the first two zombies, scoring between \u2212100 and +60.\n- The gap between running and fighting is within the noise, so this doesn't prove running is better. It's just that nothing I measured favoured fighting.\n\n**What the submitted weights do:** always move forward and shoot. The heading correction now acts only if the player is more than about 14\u00b0 off the corridor's direction. That should almost never happen, because the player starts facing do"
+ },
+ "audit": {
+  "rebuilt": true,
+  "matches_submitted": true,
+  "flags": [],
+  "notes": [],
+  "tool_counts": {
+   "Read": 26,
+   "Bash": 64,
+   "Write": 15,
+   "Edit": 25
+  },
+  "practice_rounds_seen": 10,
+  "nonzero_weights": 4760,
+  "total_weights": 478471
+ },
+ "score": {
+  "mean": 221.39190185546875,
+  "se": 15.702239572536367,
+  "median": 131.50967407226562,
+  "kills_mean": 0.26,
+  "action_share": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0006,
+   0.0,
+   0.9994
+  ]
+ }
+}

@@ -1,0 +1,55 @@
+{
+ "id": "basic-pixels-b1-20261105-000137-opus",
+ "scenario": "basic",
+ "mode": "pixels",
+ "budget": 1,
+ "model": "claude-opus-5-5",
+ "effort": null,
+ "workspace": "/private/tmp/doom-weights-ws/basic-pixels-b1-20261105-000137-opus/workspace",
+ "started": "20261105-000137",
+ "exit": 0,
+ "builder_minutes": 5.3,
+ "usage": {
+  "turns": 32,
+  "cost_usd": 1.3919948000000002,
+  "input": 48,
+  "output": 28177,
+  "cache_read": 1069314,
+  "cache_write": 76800,
+  "denials": [
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash"
+  ],
+  "result": "I've written `build.py`, `weights.npz` and `explanation.md`. The final weights have never been played in the game: my one practice round went to a first version that didn't work, scoring \u2212300.\n\n**What the practice round showed.** My first network looked for red. The room turned out to be brown brick and the Freedoom Cacodemon is dark blue and red, so the network saw nothing and walked left all game. The screens it saved let me measure the real colours. Monster cells have green well below the average of red and blue, while brick, floor, ceiling and gun don't. So R+B\u22122G is about 0 everywhere in the background and 0.05\u20130.16 on the monster.\n\n**The network now:**\n- **Layer 1:** 40 units, one per screen column. Each sums R+B\u22122G over rows 10\u201319 and subtracts a threshold of 0.10. Only the monster's columns come out positive.\n- **Layer 2:** three units. Two say whether the monster's centre is more than one column right or left of the screen centre, and one says whether it's visible at all.\n- **Layer 3:** strafe toward the monster when it's off-centre, otherwise shoot.\n\n**Checks.**\n- On all 6 practice inputs it now picks MOVE_RIGHT, which is toward the monster. That includes the frames where the player was against the left wall and the monster was at the screen edge.\n- I slid the real monster patch across the real background. It shoots when the monster's centre is within \u22126 to +8 px of the screen centre and strafes toward it otherwise.\n\n**Prediction:** an average of about 75 on held-out games, with an 80% range of 55\u201388. A rough model of Doom's strafing physics, built from estimates, suggests about 80. The main risk is that the sprite's centre and the monster's hitbox don't line up. If they're off by more than a few pixels, it can stand still and miss repeatedly, costing shots and time. I'd put about a 10% chance on that, which would pull the average down to roughly 30\u201350."
+ },
+ "audit": {
+  "rebuilt": true,
+  "matches_submitted": true,
+  "flags": [
+   "command: looking outside the workspace: python3 build.py && mkdir -p /tmp/dwtest && cat > /tmp/dwtest/test.py <<'EOF'\nimport numpy as np, sys\nsys.path.insert(0, sys.argv[1])\nimport net\nw = net.load(sy"
+  ],
+  "notes": [],
+  "tool_counts": {
+   "Bash": 18,
+   "Write": 8,
+   "Edit": 2,
+   "Read": 3
+  },
+  "nonzero_weights": 1363,
+  "total_weights": 477955
+ },
+ "score": {
+  "mean": 76.63,
+  "se": 0.6694973072164835,
+  "median": 75.0,
+  "kills_mean": 1.0,
+  "action_share": [
+   0.4,
+   0.3279,
+   0.2721
+  ]
+ }
+}

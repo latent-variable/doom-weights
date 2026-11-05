@@ -1,0 +1,54 @@
+{
+ "id": "defend_the_center-objects-b10-20261104-211210-opus",
+ "scenario": "defend_the_center",
+ "mode": "objects",
+ "budget": 10,
+ "model": "claude-opus-5-5",
+ "effort": null,
+ "workspace": "/private/tmp/doom-weights-ws/defend_the_center-objects-b10-20261104-211210-opus/workspace",
+ "started": "20261104-211210",
+ "exit": 0,
+ "builder_minutes": 8.8,
+ "usage": {
+  "turns": 39,
+  "cost_usd": 1.614675,
+  "input": 58,
+  "output": 40630,
+  "cache_read": 1470775,
+  "cache_write": 63461,
+  "denials": [
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash"
+  ],
+  "result": "The final network averaged **24.2** in practice (round 4: scores 24, 24, 24, 24, 25), and I expect **about 22\u201323** on the held-out games. I'd put roughly 70% on the held-out mean being at least 21. The highest possible score is about 25 if the player dies after 26 kills; surviving to 2,100 tics with no misses would give 26.\n\nThe policy uses 5 of the 128 hidden units in each layer and only looks at the monster channel:\n1. **Shoot** if monster pixels sit in both column 19 and column 20, which means the monster covers the crosshair. Because the test is strict, nearly every bullet is a kill.\n2. **Turn left** only if a *near* monster (one that reaches row 19 or lower on screen) is on the left and outweighs any near monster on the right.\n3. **Otherwise turn right**, so the player keeps sweeping in one direction.\n\n**What practice showed:**\n\n| Round | Policy | Mean |\n|---|---|---|\n| 1 | Steer toward the monster closest to the centre | 16.4 |\n| 2 | Same, weighted toward near monsters | 11.2 |\n| 3 | Also fire at small monsters just off the crosshair | 12.6 |\n| **4** | **Sweep right, turn left only for near monsters (final)** | **24.2** |\n| 5 | Round 4, but only shoot once a monster is past mid-room | 21.6 |\n| 6 | Round 4 with a stricter crosshair test | 23.2 |\n\n- **Rounds 1\u20133:** steering toward the monster closest to the centre let the aim swing back and forth past small, far monsters without hitting them, and most games ended in death with ammo left. Round 3's fix wasted ammo. My explanation for the swinging is that held turns speed up to about 5 grid columns per step. That comes from how Doom handles keyboard turning; I didn't measure it here.\n- **Round 4:** every game used all its ammo.\n- **Round 5:** this tried to stretch the ammo to 2,100 tics so the \u22121 for dying would become 0. One game reached 1,994 tics, but another dropped to 10, so I left it out.\n- **Round 6:** two games had all 26 bullets hit, but one died early; with five games it wasn't clearly better than round "
+ },
+ "audit": {
+  "rebuilt": true,
+  "matches_submitted": true,
+  "flags": [
+   "command: looking outside the workspace: cd /private/tmp/doom-weights-ws/defend_the_center-objects-b10-20261104-211210-opus/workspace; ls .venv/bin | head; ls /Users/linovaldovinos/Documents/LatentPlay"
+  ],
+  "notes": [],
+  "tool_counts": {
+   "Read": 3,
+   "Bash": 23,
+   "Write": 6,
+   "Edit": 6
+  },
+  "nonzero_weights": 545,
+  "total_weights": 478083
+ },
+ "score": {
+  "mean": 23.63,
+  "se": 0.13755072526236284,
+  "median": 24.0,
+  "kills_mean": 24.63,
+  "action_share": [
+   0.0486,
+   0.7439,
+   0.2075
+  ]
+ }
+}

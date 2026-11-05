@@ -1,0 +1,54 @@
+{
+ "id": "basic-pixels-b10-20261105-000137-fable",
+ "scenario": "basic",
+ "mode": "pixels",
+ "budget": 10,
+ "model": "claude-fable-5-1",
+ "effort": null,
+ "workspace": "/private/tmp/doom-weights-ws/basic-pixels-b10-20261105-000137-fable/workspace",
+ "started": "20261105-000137",
+ "exit": 0,
+ "builder_minutes": 27.0,
+ "usage": {
+  "turns": 60,
+  "cost_usd": 10.864444999999996,
+  "input": 82,
+  "output": 116820,
+  "cache_read": 4519540,
+  "cache_write": 194637,
+  "denials": [
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash"
+  ],
+  "result": "The three deliverables are in the folder: `build.py`, `weights.npz` and `explanation.md`. The final weights killed the monster with a single shot in all 25 practice games they played, averaging 77.2.\n\n**Prediction for held-out games: about 79, likely between 77 and 81.** My simulator gives 80.2 for a uniformly placed monster. The practice average is lower because those games had the monster far from the centre more often than a uniform draw would; with 5 games per round that is within noise.\n\nHow the network plays:\n\n- **Finding the monster:** it is a small blue-and-red creature on brown walls, so layer 1 looks for cells where `R + B \u2212 2.1\u00b7G` is positive in the five screen rows it always occupies. Layer 2 turns those detections into its offset from the crosshair.\n- **When to shoot:** the bullet leaves 4 tics after ATTACK is chosen and the player slides up to 24 map units in that time, so the network fires before the monster reaches the crosshair. The window is \u00b126 units at rest and widens to \u00b149 at top speed.\n- **Knowing its speed without memory:** every game starts from the same spot, so speed follows from distance travelled, which the network reads from how much of each side wall shows above the far wall.\n- **After a miss:** the ammo input reveals that a shot has already been fired, and the network switches to a narrow window so it re-centres instead of repeating the same miss.\n\nEvery number comes from the measured geometry and ZDoom's movement and pistol timing; nothing was fitted or searched. I used 8 of the 10 practice rounds: one failed colour guess (\u2212300), one fixed-window version (75.8), then six on the speed-aware version.\n\nThe one judgement call is a 5-unit safety margin inside the \u00b131-unit hit box. Shaving it would gain about 0.14 points per unit, but a miss costs roughly 20, and I have no direct measurement of the hit-box edge beyond one kill at 24.4 units off centre.\n\nI also left my analysis helpers in `tools/` (frame probes and the simulator); `build.py"
+ },
+ "audit": {
+  "rebuilt": true,
+  "matches_submitted": true,
+  "flags": [
+   "sim.py:84: randomness (random features are fine; random search is not): rng = rng or np.random.default_rng(0)"
+  ],
+  "notes": [],
+  "tool_counts": {
+   "Read": 6,
+   "Bash": 39,
+   "Write": 14
+  },
+  "nonzero_weights": 13221,
+  "total_weights": 477955
+ },
+ "score": {
+  "mean": 80.58666666666667,
+  "se": 0.5395066356262924,
+  "median": 79.0,
+  "kills_mean": 1.0,
+  "action_share": [
+   0.3623,
+   0.2808,
+   0.3569
+  ]
+ }
+}

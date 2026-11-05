@@ -1,0 +1,70 @@
+{
+ "id": "deadly_corridor-objects-b0-20261105-002846-fable",
+ "agent": "claude",
+ "scenario": "deadly_corridor",
+ "mode": "objects",
+ "budget": 0,
+ "model": "claude-fable-5-1",
+ "effort": null,
+ "workspace": "/private/tmp/doom-weights-ws/deadly_corridor-objects-b0-20261105-002846-fable/workspace",
+ "started": "20261105-002846",
+ "exit": 0,
+ "builder_minutes": 64.4,
+ "usage": {
+  "turns": 138,
+  "cost_usd": 28.993821500000003,
+  "input": 160,
+  "output": 296798,
+  "cache_read": 21922726,
+  "cache_write": 433582,
+  "denials": [
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash"
+  ],
+  "result": "The three deliverables are in the workspace: `build.py`, `weights.npz` (its output, loads through the harness's own `net.load`) and `explanation.md`. The network has never played Doom; everything below was checked only on frames and a toy corridor I built myself.\n\n**What the network does**\n- **Walks at the vest**, treating the pickup highest on screen as the farthest one.\n- **Stops for any monster within roughly 350\u2013460 units**: turns to it, sidesteps until the crosshair is on it, then holds ATTACK until it is gone.\n- **Ignores far monsters**, except to shoot one that happens to be under the crosshair while walking.\n- **Below 40 health it stops fighting and runs**, since distance is kept and death costs only 100.\n- **When the vest is out of view** it turns towards the side of the depth picture that is much deeper than straight ahead.\n\n**Predicted average score: about 750**, with low confidence; my 80% range is 250 to 1,500. If the fights work as designed, I expect the vest in roughly a quarter to a third of games and a few hundred points otherwise. If a threshold is off or there is a stuck state I did not find, the average drops to roughly 0\u2013600.\n\n**Toy checks** (`check.py`, used to confirm the logic and catch stuck states, not to tune for score)\n- 60 of 60 hand-made frames give the intended action.\n- 190 of 190 plain-corridor runs reach the vest across varied turn rates, sprite sizes, widths and moving monsters.\n- 144 of 144 runs find the vest from a random start pose.\n- 123 of 128 runs reach it in a corridor with side alcoves. Three failures were long detours back down the corridor; two were sidestepping into a wall at a half-hidden monster that never moves.\n\n**Known weaknesses**\n- With nothing in view and open space ahead it walks, which can be back towards the start.\n- Dropped clips and shotguns look the same as the vest, so it can head for one when the vest is out of view.\n- It assumes things I could not verify: turn rate, sprite sizes, the depth scale, whether"
+ },
+ "audit": {
+  "rebuilt": true,
+  "matches_submitted": true,
+  "flags": [
+   "check.py:177: randomness (random features are fine; random search is not): rng = np.random.default_rng(seed)",
+   "check.py:308: randomness (random features are fine; random search is not): rng = np.random.default_rng(0)",
+   "check.py:197: a long loop (search?): for step in range(525):",
+   "probe2.py:15: randomness (random features are fine; random search is not): rng = np.random.default_rng(0)"
+  ],
+  "notes": [],
+  "tool_counts": {
+   "Read": 10,
+   "Bash": 74,
+   "Write": 12,
+   "Edit": 40,
+   "ToolSearch": 1
+  },
+  "practice_rounds_seen": 0,
+  "nonzero_weights": 4703,
+  "total_weights": 478471
+ },
+ "score": {
+  "mean": 945.2906513977051,
+  "se": 76.36961067412172,
+  "median": 733.5187454223633,
+  "kills_mean": 3.89,
+  "action_share": [
+   0.4974,
+   0.078,
+   0.045,
+   0.1426,
+   0.1304,
+   0.0995,
+   0.0071
+  ]
+ }
+}

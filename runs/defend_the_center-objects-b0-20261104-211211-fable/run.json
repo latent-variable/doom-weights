@@ -1,0 +1,56 @@
+{
+ "id": "defend_the_center-objects-b0-20261104-211211-fable",
+ "scenario": "defend_the_center",
+ "mode": "objects",
+ "budget": 0,
+ "model": "claude-fable-5-1",
+ "effort": null,
+ "workspace": "/private/tmp/doom-weights-ws/defend_the_center-objects-b0-20261104-211211-fable/workspace",
+ "started": "20261104-211211",
+ "exit": 0,
+ "builder_minutes": 25.5,
+ "usage": {
+  "turns": 28,
+  "cost_usd": 10.176012750000002,
+  "input": 44,
+  "output": 125388,
+  "cache_read": 2367331,
+  "cache_write": 165717,
+  "denials": [
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash"
+  ],
+  "result": "The three deliverables are in the folder: `build.py`, `weights.npz` (built from it, loads cleanly through the harness's own loader) and `explanation.md`.\n\n**Prediction:** about 13 points per game on average (roughly 14 kills, minus 1 for the death). Confidence is low: my 50% interval is 8 to 18 and my 90% interval is 4 to 23. The number depends on room size and monster speeds that I had to recall or guess.\n\nThe network implements a three-rule program, using only the monster channel plus ammo and health:\n\n1. **Attack** when a monster straddles the crosshair with a margin proportional to its own width. The margin loosens once health has fallen behind ammo, since bullets you won't live to use aren't worth protecting.\n2. **Turn left** when a big (close) monster on the left outweighs what is on the right.\n3. **Turn right** otherwise, as a constant sweep that shows every direction about every 3 seconds.\n\nFar, thin monsters are deliberately not chased. As I remember the engine, a held turn moves about 14\u00b0 per step, so a memoryless policy cannot fine-aim and would just flip between the same two views.\n\nWhat I verified, without the game:\n\n- **Synthetic frames:** hand-made frames pushed through the harness's real `encode` and `forward` all give the intended action, and the network matches a plain-Python statement of the program on 3,000 random frames.\n- **Stand-in simulator:** I wrote a crude imitation of the game from memory of Doom's rules to look for closed-loop logic failures. It showed under one wasted bullet per game and no stuck states; scores there ranged from 6.7 to 17.4 across ten guessed configurations, always dying with ammo left.\n\nTwo things you should know:\n\n- **Use of the simulator:** early on I compared a handful of hand-picked variants in it (turn-back thresholds, margin size). That confirmed the reasoning and prompted the health/ammo rule, but the final constants are round values chosen by reasoning, not the best-scoring ones. If you consider that outside th"
+ },
+ "audit": {
+  "rebuilt": true,
+  "matches_submitted": true,
+  "flags": [
+   "sim_check.py:94: randomness (random features are fine; random search is not): self.rng = np.random.default_rng(seed)",
+   "test_frames.py:28: randomness (random features are fine; random search is not): rng = np.random.default_rng(depth_seed)",
+   "test_frames.py:117: randomness (random features are fine; random search is not): rng = np.random.default_rng(0)",
+   "test_frames.py:119: a long loop (search?): for i in range(3000):"
+  ],
+  "notes": [],
+  "tool_counts": {
+   "Read": 2,
+   "Bash": 21,
+   "Write": 4
+  },
+  "nonzero_weights": 6705,
+  "total_weights": 478083
+ },
+ "score": {
+  "mean": 19.45,
+  "se": 0.6000631279921784,
+  "median": 22.0,
+  "kills_mean": 20.45,
+  "action_share": [
+   0.1248,
+   0.7357,
+   0.1395
+  ]
+ }
+}

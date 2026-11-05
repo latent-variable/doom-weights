@@ -1,0 +1,60 @@
+{
+ "id": "health_gathering-pixels-b0-20261104-211219-fable",
+ "scenario": "health_gathering",
+ "mode": "pixels",
+ "budget": 0,
+ "model": "claude-fable-5-1",
+ "effort": null,
+ "workspace": "/private/tmp/doom-weights-ws/health_gathering-pixels-b0-20261104-211219-fable/workspace",
+ "started": "20261104-211219",
+ "exit": 0,
+ "builder_minutes": 60.4,
+ "usage": {
+  "turns": 45,
+  "cost_usd": 13.980886750000002,
+  "input": 68,
+  "output": 161950,
+  "cache_read": 5522187,
+  "cache_write": 225108,
+  "denials": [
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash"
+  ],
+  "result": "The three deliverables are in the workspace: `build.py`, `weights.npz` (its output, accepted by the harness's own loader at the required shapes and float32) and `explanation.md`. The network has never played Doom; the only testing was on frames and a crude stand-in room I wrote myself, which share my assumptions about the screen and so cannot check them.\n\n**Prediction:** about 1500 average on held-out games, held loosely \u2014 roughly a 50% chance it lands between 1200 and 2100. The outcome is two-humped:\n- **Assumptions hold:** near 1900\u20132100.\n- **A visual assumption is wrong** (a status bar is drawn, or the floor is not palette green): closer to 300\u2013700.\n- **Medkits much scarcer than I remember:** roughly 1000\u20131400.\n\n## What the network does\n\n- **Layer 1 (127 of 128 units):**\n  - Medkit detectors ignore everything above the horizon and look for non-green patches on the floor, in two families.\n  - The \"guarded\" family requires green floor directly above the patch, so walls cancel themselves.\n  - The \"bump\" family compares a block with its left and right neighbours, so a wall's straight base line never fires but a medkit in front of a wall does.\n  - Two more units detect a wall ahead (within about 70 units, and within about 150), and twelve read the health value.\n- **Layer 2 (8 units):** left-versus-right opponent votes for forward, forward-left, forward-right and turn-left, so anything that lights every column equally (a stripe along a wall) cancels.\n- **Layer 3:** a fixed priority order.\n  1. Wall right in front: turn left.\n  2. Any medkit vote: follow it.\n  3. Wall nearby, or health passing through one of three levels: turn left to look around.\n  4. Otherwise: walk forward.\n\nThere is no pure right turn anywhere, so the agent cannot dither left-right in place.\n\n## Stand-in results\n\nIn my stand-in room the final weights survived all 2,100 tics in every episode (five per variant) under my baseline assumptions. The same held when I varied wall colour, floor tint, lightin"
+ },
+ "audit": {
+  "rebuilt": true,
+  "matches_submitted": true,
+  "flags": [
+   "checks.py:25: randomness (random features are fine; random search is not): rng = np.random.default_rng(1)",
+   "checks.py:30: a long loop (search?): for _ in range(400):",
+   "checks.py:76: a long loop (search?): print(\"  \" + \" \".join(f\"{hp}:{NAMES[act(frame((300, 592), 0.0, [], hp=hp))[0]]}\" for hp in range(100, 0, -5)))",
+   "falsepos.py:27: randomness (random features are fine; random search is not): rng = np.random.default_rng(1)",
+   "falsepos.py:29: a long loop (search?): for _ in range(400):",
+   "sim.py:30: randomness (random features are fine; random search is not): self.rng = np.random.default_rng(seed)"
+  ],
+  "notes": [],
+  "tool_counts": {
+   "Read": 2,
+   "Bash": 33,
+   "Write": 9
+  },
+  "nonzero_weights": 51873,
+  "total_weights": 478213
+ },
+ "score": {
+  "mean": 2100.0,
+  "se": 0.0,
+  "median": 2100.0,
+  "kills_mean": 0.0,
+  "action_share": [
+   0.1895,
+   0.0,
+   0.3879,
+   0.2542,
+   0.1685
+  ]
+ }
+}

@@ -1,0 +1,54 @@
+{
+ "id": "health_gathering-objects-b0-20261104-211005",
+ "scenario": "health_gathering",
+ "mode": "objects",
+ "budget": 0,
+ "model": "claude-opus-5-5",
+ "effort": null,
+ "workspace": "/private/tmp/doom-weights-ws/health_gathering-objects-b0-20261104-211005/workspace",
+ "started": "20261104-211005",
+ "exit": 0,
+ "builder_minutes": 4.2,
+ "usage": {
+  "turns": 14,
+  "cost_usd": 0.8223234,
+  "input": 20,
+  "output": 23189,
+  "cache_read": 363837,
+  "cache_write": 35712,
+  "denials": [
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash"
+  ],
+  "result": "I've written the three files the brief asks for: `build.py`, `weights.npz` and `explanation.md`. On frames I built myself, the network picks the action I intended in every case. It has never played the real game, so how well it scores there is still a guess.\n\n**How it plays** (it has no memory, and uses 9 of the 128 hidden units per layer):\n- **Medkits:** every medkit pixel on screen votes for an action based on where it is.\n  - Near the centre: move forward.\n  - Off to one side: move forward while turning that way.\n  - Close and well off to the side: turn in place, because moving and turning together would just circle it.\n  - Lower rows (nearer the player) get more weight, so the nearest medkit usually wins.\n- **Walls:** it compares the depth straight ahead with the depth of the floor a little below. If something ahead is closer than about 200 units, it turns right in place. It always turns right so it can't flip back and forth in a corner. A medkit close and straight ahead overrides this, so medkits next to walls still get picked up.\n  - This works whatever units the depth buffer uses, as long as depth grows in proportion to distance.\n  - If the depth reading maxes out, the wall check switches off so the bot can't get stuck spinning in place.\n- **Otherwise:** walk forward.\n\n**Testing:** I checked it on synthetic frames with depth ranges from 150 to 5,000 units.\n- Walls at 190 units or closer trigger the turn, and walls at 230 or further don't. The one exception is the 150-unit range: its depth reading maxes out by 150 units, so the turn starts nearer, at about 100.\n- Medkits at different angles and distances get the intended action, and a nearby medkit beats a wall when it should.\n- `weights.npz` has the required keys, shapes and float32 type.\n\n**Prediction:** an average of about **1,400** on held-out games, likely between 800 and 2,000, at about 60% confidence. The best possible is about 2,100, which means surviving the whole episode. The biggest unknowns are whe"
+ },
+ "audit": {
+  "rebuilt": true,
+  "matches_submitted": true,
+  "flags": [],
+  "notes": [],
+  "tool_counts": {
+   "Read": 1,
+   "Bash": 7,
+   "Write": 3,
+   "Edit": 2
+  },
+  "nonzero_weights": 1360,
+  "total_weights": 478213
+ },
+ "score": {
+  "mean": 1990.96,
+  "se": 33.2206882116028,
+  "median": 2100.0,
+  "kills_mean": 0.0,
+  "action_share": [
+   0.0852,
+   0.1865,
+   0.322,
+   0.1617,
+   0.2446
+  ]
+ }
+}

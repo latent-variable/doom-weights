@@ -1,0 +1,56 @@
+{
+ "id": "defend_the_center-pixels-b0-20261104-211009",
+ "scenario": "defend_the_center",
+ "mode": "pixels",
+ "budget": 0,
+ "model": "claude-opus-5-5",
+ "effort": null,
+ "workspace": "/private/tmp/doom-weights-ws/defend_the_center-pixels-b0-20261104-211009/workspace",
+ "started": "20261104-211009",
+ "exit": 0,
+ "builder_minutes": 16.3,
+ "usage": {
+  "turns": 33,
+  "cost_usd": 3.0135546000000004,
+  "input": 56,
+  "output": 82943,
+  "cache_read": 2396353,
+  "cache_write": 109400,
+  "denials": [
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash"
+  ],
+  "result": "I've written the network, and `build.py`, `weights.npz` and `explanation.md` are in the folder. It has never played the real game; I only tested it on frames I drew myself and in a rough simulator I wrote, so its real score is unknown. My prediction is an average of **about 4** (kills minus 1 for the death), with low confidence and a likely range of 1 to 8. `build.py` runs in under a second and the weights pass the harness's own shape check.\n\n**What it does:** it spins left forever and never turns right, so it can't get stuck swinging back and forth. It fires only when the centre of the screen, right at eye level, is a different colour from most of 8 narrow strips of wall spread across the screen. It never fires while the pistol's muzzle flash is visible.\n\n- **The aim test:** both centre columns have to differ from the wall, which means the monster covers the line the bullet travels along, so it doesn't fire at monsters it would miss.\n- **Comparing against many wall strips:** I don't know the wall's colour, so the network takes a vote. Another monster standing in one or two of the strips doesn't change the decision.\n- **Ignoring corpses:** the row it relies on most is just above eye level. Standing monsters always reach it and bodies on the floor never do, so it won't keep shooting a corpse until the ammo runs out.\n- **The flash rule:** this is meant to stop the pistol automatically firing a second shot at a monster that is already dying.\n- **Close monsters:** a separate check, higher up the screen, catches a monster that is right next to the player.\n\n**What I checked:** on drawn frames it fires at a centred monster from far away (480 units) right down to touching distance. It holds fire on empty wall, on monsters 6\u00b0 or more off centre, on corpses at any distance, and while the flash is showing. In the simulator it gets about 0.6 to 0.7 kills per bullet.\n\n**Main risks:**\n- **The status bar:** the design assumes the scenario draws the bar at the bottom of the screen,"
+ },
+ "audit": {
+  "rebuilt": true,
+  "matches_submitted": true,
+  "flags": [
+   "sim_check.py:56: randomness (random features are fine; random search is not): rng = np.random.default_rng(seed)",
+   "sim_check.py:66: a long loop (search?): for tic in range(2100):",
+   "test_synthetic.py:9: randomness (random features are fine; random search is not): rng = np.random.default_rng(0)"
+  ],
+  "notes": [],
+  "tool_counts": {
+   "Read": 1,
+   "Bash": 21,
+   "Write": 7,
+   "Edit": 3
+  },
+  "nonzero_weights": 3617,
+  "total_weights": 478083
+ },
+ "score": {
+  "mean": 3.3,
+  "se": 0.17609685122142588,
+  "median": 3.0,
+  "kills_mean": 4.3,
+  "action_share": [
+   0.9103,
+   0.0,
+   0.0897
+  ]
+ }
+}

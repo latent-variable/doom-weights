@@ -1,0 +1,48 @@
+{
+ "id": "defend_the_center-pixels-b0-20261104-211217-fable",
+ "scenario": "defend_the_center",
+ "mode": "pixels",
+ "budget": 0,
+ "model": "claude-fable-5-1",
+ "effort": null,
+ "workspace": "/private/tmp/doom-weights-ws/defend_the_center-pixels-b0-20261104-211217-fable/workspace",
+ "started": "20261104-211217",
+ "exit": "timeout",
+ "builder_minutes": 100.0,
+ "usage": {},
+ "audit": {
+  "rebuilt": true,
+  "matches_submitted": true,
+  "flags": [
+   "framecheck.py:69: gradient or optimizer words: static(\"empty gradient .3\", gradient=0.3)",
+   "framecheck.py:70: gradient or optimizer words: static(\"empty dark gradient\", gradient=0.3, light=0.3)",
+   "framecheck.py:50: randomness (random features are fine; random search is not): rng = np.random.default_rng(seed + 100)",
+   "framecheck.py:54: a long loop (search?): for step in range(150):",
+   "selfcheck.py:25: gradient or optimizer words: respawn=70, speed=5.0, mon_w=44.0, mon_r=30.0, gradient=0.0):",
+   "selfcheck.py:28: gradient or optimizer words: self.noise, self.light, self.gradient = noise, light, gradient",
+   "selfcheck.py:68: gradient or optimizer words: shade = 1.0 + self.gradient * (1 / cosphi - 1)             # brighter towards the edges",
+   "selfcheck.py:218: gradient or optimizer words: \"gradient\": dict(gradient=0.25),",
+   "selfcheck.py:26: randomness (random features are fine; random search is not): self.rng = np.random.default_rng(seed)"
+  ],
+  "notes": [],
+  "tool_counts": {
+   "Read": 5,
+   "Bash": 28,
+   "Write": 6,
+   "Edit": 8
+  },
+  "nonzero_weights": 3245,
+  "total_weights": 478083
+ },
+ "score": {
+  "mean": 3.71,
+  "se": 0.14722689148303572,
+  "median": 3.0,
+  "kills_mean": 4.71,
+  "action_share": [
+   0.0131,
+   0.9081,
+   0.0787
+  ]
+ }
+}

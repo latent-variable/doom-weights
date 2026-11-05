@@ -1,0 +1,51 @@
+{
+ "id": "basic-objects-b0-20261104-211001",
+ "scenario": "basic",
+ "mode": "objects",
+ "budget": 0,
+ "model": "claude-opus-5-5",
+ "effort": null,
+ "workspace": "/private/tmp/doom-weights-ws/basic-objects-b0-20261104-211001/workspace",
+ "started": "20261104-211001",
+ "exit": 0,
+ "builder_minutes": 1.7,
+ "usage": {
+  "turns": 14,
+  "cost_usd": 0.4056219999999999,
+  "input": 26,
+  "output": 8355,
+  "cache_read": 381490,
+  "cache_write": 20265,
+  "denials": [
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash"
+  ],
+  "result": "I've written the network and the three files the brief asks for (`build.py`, `weights.npz`, `explanation.md`). It has only been checked on frames I built myself, since the game isn't available here. My prediction is an average score of **about 75 per game (likely range 60\u201385), with moderate confidence (~65%)**.\n\n**How it plays:** it moves sideways until the monster is in the middle of the screen, then shoots.\n- **Layer 1:** three units use the monster channel. One measures how far the monster's centre sits right of the screen centre, one how far left, and one whether a monster is visible at all. The other 125 units are zero.\n- **Layer 2:** passes those three values straight through.\n- **Output:** move left or right scores grow the further off-centre the monster is. Once its centre is within about 1.2 grid columns (roughly 10 pixels) of the middle, both drop to zero and shoot wins. If no monster is visible, every score is zero and it moves left.\n\n**Checks:** I slid a fake monster across every column. It chose left on the left side, shoot within \u00b11 column of the centre, and right on the right side. Partial monsters at the screen edges, an empty screen and a small faint monster at the centre also gave the expected actions. `check.py`, which runs this check, is also in the folder.\n\n**Main risks:** I've had to guess how wide the monster appears on screen and how far the player drifts while the pistol is firing. If the drift is larger than I assumed, it could miss or wobble back and forth around the centre, and each miss costs points.\n\nYour permission settings blocked running the workspace's own Python (`.venv/bin/python`), so I built and tested with the system `python3`. Only numpy is needed, so the result should be the same."
+ },
+ "audit": {
+  "rebuilt": true,
+  "matches_submitted": true,
+  "flags": [],
+  "notes": [],
+  "tool_counts": {
+   "Read": 1,
+   "Bash": 8,
+   "Write": 4
+  },
+  "nonzero_weights": 3607,
+  "total_weights": 477955
+ },
+ "score": {
+  "mean": 77.82666666666667,
+  "se": 0.6035475453841268,
+  "median": 75.0,
+  "kills_mean": 1.0,
+  "action_share": [
+   0.3877,
+   0.3056,
+   0.3067
+  ]
+ }
+}

@@ -1,0 +1,53 @@
+{
+ "id": "health_gathering-pixels-b10-20261104-211218-opus",
+ "scenario": "health_gathering",
+ "mode": "pixels",
+ "budget": 10,
+ "model": "claude-opus-5-5",
+ "effort": null,
+ "workspace": "/private/tmp/doom-weights-ws/health_gathering-pixels-b10-20261104-211218-opus/workspace",
+ "started": "20261104-211218",
+ "exit": 0,
+ "builder_minutes": 4.1,
+ "usage": {
+  "turns": 38,
+  "cost_usd": 1.1260008000000001,
+  "input": 48,
+  "output": 19087,
+  "cache_read": 1216224,
+  "cache_write": 62603,
+  "denials": [
+   "Bash",
+   "Bash",
+   "Bash"
+  ],
+  "result": "The network now reaches the 2,100-tic maximum in all 5 practice games, finishing with health between 92 and 100. That was practice round 3; I left the other 7 rounds unused.\n\n**How it works:**\n- **Medkit detector:** I picked one colour combination, `\u22124.8\u00b7R + 0.9\u00b7G + 4.9\u00b7B`, by solving it from colours I measured by hand in the practice inputs. It comes out about 0 on the green floor, negative on walls and clearly positive on the grey medkits.\n- **Layer 1:** 40 units, one per screen column. Each adds up that medkit score over the floor rows (13\u201329), counting lower rows a little more because they show nearer medkits. The other 88 units are unused.\n- **Layer 2:** adds those columns into how much medkit is on the left, in the centre and on the right.\n- **Output:** it always moves forward. It goes straight when the medkits are mostly ahead and turns toward the side with more medkit otherwise. With nothing in view it moves forward while turning left, which sweeps in a wide circle until medkits come into view.\n\n**Practice scores:**\n\n| Round | Network | Mean score |\n|---|---|---|\n| 1 | constant forward + turn left | 348 |\n| 2 | first colour feature | 463 |\n| 3 | final network | 2100 in all 5 games |\n\nRound 2 failed because a close-up wall also looked like a medkit, so the agent pressed into a wall until it died. In the final network walls score negative.\n\n**Known weakness:** very distant medkits along the bottom of the far wall sometimes don't register. The turning-left sweep covers this in practice, but a game where medkits stay scarce near the agent for a long time could still go badly.\n\n**Prediction:** a held-out average of about 2,050. I'm about 75% confident it will be at least 1,900 and about 90% confident it will be at least 1,500.\n\nFiles are in the workspace folder:\n- build.py\n- weights.npz\n- explanation.md"
+ },
+ "audit": {
+  "rebuilt": true,
+  "matches_submitted": true,
+  "flags": [],
+  "notes": [],
+  "tool_counts": {
+   "Read": 9,
+   "Bash": 19,
+   "Write": 6,
+   "Edit": 3
+  },
+  "nonzero_weights": 2125,
+  "total_weights": 478213
+ },
+ "score": {
+  "mean": 2100.0,
+  "se": 0.0,
+  "median": 2100.0,
+  "kills_mean": 0.0,
+  "action_share": [
+   0.0,
+   0.0,
+   0.267,
+   0.5113,
+   0.2216
+  ]
+ }
+}
