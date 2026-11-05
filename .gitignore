@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+logs/
+*.npz
+runs/*/videos/
+runs/*/practice_used
+results/ppo/*/
+!results/ppo/*/*.eval.json
+!results/ppo/*/train.json
+_vizdoom.ini
