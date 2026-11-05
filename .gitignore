@@ -8,3 +8,12 @@ results/ppo/*/
 !results/ppo/*/*.eval.json
 !results/ppo/*/train.json
 _vizdoom.ini
+
+# queue bookkeeping (which jobs ran on this machine)
+builder/*.done
+
+# raw run records: published as a release archive, not in git
+runs/*/practice_runs/
+runs/*/transcript.jsonl
+runs/*/tool_calls.json
+runs-failed/

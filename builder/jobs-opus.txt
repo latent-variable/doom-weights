@@ -1,0 +1,9 @@
+# Opus 5.5, paced one at a time under the weekly ceiling (2026-11-04 evening)
+--scenario deadly_corridor --mode objects --budget 0 --tag opus
+--scenario basic --mode pixels --budget 3 --tag opus
+--scenario deadly_corridor --mode objects --budget 10 --tag opus
+--scenario defend_the_center --mode objects --budget 0 --tag opus-rep2
+--scenario basic --mode pixels --budget 1 --tag opus
+--scenario basic --mode pixels --budget 0 --tag opus-rep2
+--scenario deadly_corridor --mode pixels --budget 10 --tag opus
+--scenario health_gathering --mode pixels --budget 3 --tag opus
