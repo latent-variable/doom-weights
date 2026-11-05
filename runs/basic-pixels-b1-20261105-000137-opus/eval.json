@@ -1,0 +1,3623 @@
+{
+ "scenario": "basic",
+ "mode": "pixels",
+ "player": "weights",
+ "weights": "/Users/linovaldovinos/Documents/LatentPlayground/doom-weights/runs/basic-pixels-b1-20261105-000137-opus/rebuilt.npz",
+ "seed": 20261104,
+ "seconds": 7.0,
+ "episodes": 300,
+ "mean": 76.63,
+ "se": 0.6694973072164835,
+ "median": 75.0,
+ "min": 39.0,
+ "max": 95.0,
+ "kills_mean": 1.0,
+ "tics_mean": 0.0,
+ "action_share": [
+  0.4,
+  0.3279,
+  0.2721
+ ],
+ "games": [
+  {
+   "score": 63.0,
+   "steps": 10,
+   "actions": [
+    8,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 95.0,
+   "steps": 2,
+   "actions": [
+    0,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 67.0,
+   "steps": 9,
+   "actions": [
+    7,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 63.0,
+   "steps": 10,
+   "actions": [
+    0,
+    8,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 75.0,
+   "steps": 7,
+   "actions": [
+    0,
+    5,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 79.0,
+   "steps": 6,
+   "actions": [
+    4,
+    1,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 67.0,
+   "steps": 9,
+   "actions": [
+    7,
+    1,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 83.0,
+   "steps": 5,
+   "actions": [
+    0,
+    3,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 63.0,
+   "steps": 10,
+   "actions": [
+    1,
+    8,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 79.0,
+   "steps": 6,
+   "actions": [
+    4,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 83.0,
+   "steps": 5,
+   "actions": [
+    0,
+    3,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 75.0,
+   "steps": 7,
+   "actions": [
+    5,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 75.0,
+   "steps": 7,
+   "actions": [
+    1,
+    5,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 63.0,
+   "steps": 10,
+   "actions": [
+    0,
+    8,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 95.0,
+   "steps": 2,
+   "actions": [
+    0,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 71.0,
+   "steps": 8,
+   "actions": [
+    6,
+    1,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 67.0,
+   "steps": 9,
+   "actions": [
+    0,
+    7,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 71.0,
+   "steps": 8,
+   "actions": [
+    6,
+    1,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 87.0,
+   "steps": 4,
+   "actions": [
+    2,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 75.0,
+   "steps": 7,
+   "actions": [
+    5,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 87.0,
+   "steps": 4,
+   "actions": [
+    0,
+    2,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 67.0,
+   "steps": 9,
+   "actions": [
+    1,
+    7,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 71.0,
+   "steps": 8,
+   "actions": [
+    1,
+    6,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 83.0,
+   "steps": 5,
+   "actions": [
+    3,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 67.0,
+   "steps": 9,
+   "actions": [
+    7,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 71.0,
+   "steps": 8,
+   "actions": [
+    6,
+    1,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 75.0,
+   "steps": 7,
+   "actions": [
+    0,
+    5,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 63.0,
+   "steps": 10,
+   "actions": [
+    8,
+    1,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 67.0,
+   "steps": 9,
+   "actions": [
+    1,
+    7,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 95.0,
+   "steps": 2,
+   "actions": [
+    0,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 91.0,
+   "steps": 3,
+   "actions": [
+    1,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 95.0,
+   "steps": 2,
+   "actions": [
+    0,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 71.0,
+   "steps": 8,
+   "actions": [
+    6,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 67.0,
+   "steps": 9,
+   "actions": [
+    1,
+    7,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 71.0,
+   "steps": 8,
+   "actions": [
+    6,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 87.0,
+   "steps": 4,
+   "actions": [
+    2,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 79.0,
+   "steps": 6,
+   "actions": [
+    4,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 71.0,
+   "steps": 8,
+   "actions": [
+    0,
+    6,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 83.0,
+   "steps": 5,
+   "actions": [
+    3,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 79.0,
+   "steps": 6,
+   "actions": [
+    0,
+    4,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 67.0,
+   "steps": 9,
+   "actions": [
+    0,
+    7,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 67.0,
+   "steps": 9,
+   "actions": [
+    7,
+    1,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 79.0,
+   "steps": 6,
+   "actions": [
+    4,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 79.0,
+   "steps": 6,
+   "actions": [
+    1,
+    4,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 87.0,
+   "steps": 4,
+   "actions": [
+    2,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 71.0,
+   "steps": 8,
+   "actions": [
+    6,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 71.0,
+   "steps": 8,
+   "actions": [
+    6,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 71.0,
+   "steps": 8,
+   "actions": [
+    0,
+    6,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 75.0,
+   "steps": 7,
+   "actions": [
+    5,
+    1,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 67.0,
+   "steps": 9,
+   "actions": [
+    7,
+    1,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 75.0,
+   "steps": 7,
+   "actions": [
+    0,
+    5,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 87.0,
+   "steps": 4,
+   "actions": [
+    2,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 83.0,
+   "steps": 5,
+   "actions": [
+    0,
+    3,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 83.0,
+   "steps": 5,
+   "actions": [
+    0,
+    3,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 79.0,
+   "steps": 6,
+   "actions": [
+    4,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 75.0,
+   "steps": 7,
+   "actions": [
+    5,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 79.0,
+   "steps": 6,
+   "actions": [
+    0,
+    4,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 95.0,
+   "steps": 2,
+   "actions": [
+    0,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 75.0,
+   "steps": 7,
+   "actions": [
+    5,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 91.0,
+   "steps": 3,
+   "actions": [
+    1,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 91.0,
+   "steps": 3,
+   "actions": [
+    0,
+    1,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 63.0,
+   "steps": 10,
+   "actions": [
+    8,
+    1,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 67.0,
+   "steps": 9,
+   "actions": [
+    7,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 71.0,
+   "steps": 8,
+   "actions": [
+    0,
+    6,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 95.0,
+   "steps": 2,
+   "actions": [
+    0,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 79.0,
+   "steps": 6,
+   "actions": [
+    0,
+    4,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 95.0,
+   "steps": 2,
+   "actions": [
+    0,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 71.0,
+   "steps": 8,
+   "actions": [
+    6,
+    1,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 71.0,
+   "steps": 8,
+   "actions": [
+    0,
+    6,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 79.0,
+   "steps": 6,
+   "actions": [
+    0,
+    4,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 87.0,
+   "steps": 4,
+   "actions": [
+    2,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 63.0,
+   "steps": 10,
+   "actions": [
+    0,
+    8,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 67.0,
+   "steps": 9,
+   "actions": [
+    0,
+    7,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 75.0,
+   "steps": 7,
+   "actions": [
+    0,
+    5,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 67.0,
+   "steps": 9,
+   "actions": [
+    7,
+    1,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 63.0,
+   "steps": 10,
+   "actions": [
+    1,
+    8,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 79.0,
+   "steps": 6,
+   "actions": [
+    4,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 79.0,
+   "steps": 6,
+   "actions": [
+    4,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 71.0,
+   "steps": 8,
+   "actions": [
+    6,
+    1,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 63.0,
+   "steps": 10,
+   "actions": [
+    8,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 79.0,
+   "steps": 6,
+   "actions": [
+    0,
+    4,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 95.0,
+   "steps": 2,
+   "actions": [
+    0,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 67.0,
+   "steps": 9,
+   "actions": [
+    7,
+    1,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 79.0,
+   "steps": 6,
+   "actions": [
+    0,
+    4,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 95.0,
+   "steps": 2,
+   "actions": [
+    0,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 63.0,
+   "steps": 10,
+   "actions": [
+    8,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 95.0,
+   "steps": 2,
+   "actions": [
+    0,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 95.0,
+   "steps": 2,
+   "actions": [
+    0,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 87.0,
+   "steps": 4,
+   "actions": [
+    0,
+    2,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 95.0,
+   "steps": 2,
+   "actions": [
+    0,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 83.0,
+   "steps": 5,
+   "actions": [
+    3,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 67.0,
+   "steps": 9,
+   "actions": [
+    7,
+    1,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 71.0,
+   "steps": 8,
+   "actions": [
+    6,
+    1,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 71.0,
+   "steps": 8,
+   "actions": [
+    6,
+    1,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 75.0,
+   "steps": 7,
+   "actions": [
+    5,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 67.0,
+   "steps": 9,
+   "actions": [
+    1,
+    7,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 67.0,
+   "steps": 9,
+   "actions": [
+    7,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 67.0,
+   "steps": 9,
+   "actions": [
+    0,
+    7,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 87.0,
+   "steps": 4,
+   "actions": [
+    0,
+    2,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 79.0,
+   "steps": 6,
+   "actions": [
+    0,
+    4,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 79.0,
+   "steps": 6,
+   "actions": [
+    4,
+    1,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 71.0,
+   "steps": 8,
+   "actions": [
+    6,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 75.0,
+   "steps": 7,
+   "actions": [
+    1,
+    5,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 67.0,
+   "steps": 9,
+   "actions": [
+    7,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 67.0,
+   "steps": 9,
+   "actions": [
+    0,
+    7,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 63.0,
+   "steps": 10,
+   "actions": [
+    8,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 67.0,
+   "steps": 9,
+   "actions": [
+    7,
+    1,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 87.0,
+   "steps": 4,
+   "actions": [
+    2,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 75.0,
+   "steps": 7,
+   "actions": [
+    5,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 87.0,
+   "steps": 4,
+   "actions": [
+    0,
+    2,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 95.0,
+   "steps": 2,
+   "actions": [
+    0,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 71.0,
+   "steps": 8,
+   "actions": [
+    6,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 79.0,
+   "steps": 6,
+   "actions": [
+    0,
+    4,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 63.0,
+   "steps": 10,
+   "actions": [
+    8,
+    1,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 63.0,
+   "steps": 10,
+   "actions": [
+    1,
+    8,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 83.0,
+   "steps": 5,
+   "actions": [
+    0,
+    3,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 67.0,
+   "steps": 9,
+   "actions": [
+    0,
+    7,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 71.0,
+   "steps": 8,
+   "actions": [
+    0,
+    6,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 95.0,
+   "steps": 2,
+   "actions": [
+    0,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 75.0,
+   "steps": 7,
+   "actions": [
+    1,
+    5,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 95.0,
+   "steps": 2,
+   "actions": [
+    0,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 63.0,
+   "steps": 10,
+   "actions": [
+    8,
+    1,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 79.0,
+   "steps": 6,
+   "actions": [
+    4,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 79.0,
+   "steps": 6,
+   "actions": [
+    4,
+    1,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 95.0,
+   "steps": 2,
+   "actions": [
+    0,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 91.0,
+   "steps": 3,
+   "actions": [
+    0,
+    1,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 75.0,
+   "steps": 7,
+   "actions": [
+    5,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 67.0,
+   "steps": 9,
+   "actions": [
+    7,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 79.0,
+   "steps": 6,
+   "actions": [
+    4,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 63.0,
+   "steps": 10,
+   "actions": [
+    1,
+    8,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 67.0,
+   "steps": 9,
+   "actions": [
+    7,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 95.0,
+   "steps": 2,
+   "actions": [
+    0,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 71.0,
+   "steps": 8,
+   "actions": [
+    0,
+    6,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 79.0,
+   "steps": 6,
+   "actions": [
+    4,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 75.0,
+   "steps": 7,
+   "actions": [
+    5,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 71.0,
+   "steps": 8,
+   "actions": [
+    6,
+    1,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 91.0,
+   "steps": 3,
+   "actions": [
+    1,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 67.0,
+   "steps": 9,
+   "actions": [
+    7,
+    1,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 95.0,
+   "steps": 2,
+   "actions": [
+    0,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 75.0,
+   "steps": 7,
+   "actions": [
+    5,
+    1,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 91.0,
+   "steps": 3,
+   "actions": [
+    1,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 63.0,
+   "steps": 10,
+   "actions": [
+    0,
+    8,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 95.0,
+   "steps": 2,
+   "actions": [
+    0,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 79.0,
+   "steps": 6,
+   "actions": [
+    0,
+    4,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 75.0,
+   "steps": 7,
+   "actions": [
+    5,
+    1,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 67.0,
+   "steps": 9,
+   "actions": [
+    7,
+    1,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 67.0,
+   "steps": 9,
+   "actions": [
+    0,
+    7,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 79.0,
+   "steps": 6,
+   "actions": [
+    4,
+    1,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 75.0,
+   "steps": 7,
+   "actions": [
+    5,
+    1,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 71.0,
+   "steps": 8,
+   "actions": [
+    0,
+    6,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 79.0,
+   "steps": 6,
+   "actions": [
+    0,
+    4,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 87.0,
+   "steps": 4,
+   "actions": [
+    0,
+    2,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 79.0,
+   "steps": 6,
+   "actions": [
+    4,
+    1,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 67.0,
+   "steps": 9,
+   "actions": [
+    7,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 67.0,
+   "steps": 9,
+   "actions": [
+    7,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 75.0,
+   "steps": 7,
+   "actions": [
+    5,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 83.0,
+   "steps": 5,
+   "actions": [
+    0,
+    3,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 71.0,
+   "steps": 8,
+   "actions": [
+    0,
+    6,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 79.0,
+   "steps": 6,
+   "actions": [
+    4,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 79.0,
+   "steps": 6,
+   "actions": [
+    4,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 83.0,
+   "steps": 5,
+   "actions": [
+    3,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 87.0,
+   "steps": 4,
+   "actions": [
+    0,
+    2,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 83.0,
+   "steps": 5,
+   "actions": [
+    3,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 75.0,
+   "steps": 7,
+   "actions": [
+    5,
+    1,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 75.0,
+   "steps": 7,
+   "actions": [
+    0,
+    5,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 95.0,
+   "steps": 2,
+   "actions": [
+    0,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 67.0,
+   "steps": 9,
+   "actions": [
+    7,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 95.0,
+   "steps": 2,
+   "actions": [
+    0,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 63.0,
+   "steps": 10,
+   "actions": [
+    8,
+    1,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 79.0,
+   "steps": 6,
+   "actions": [
+    0,
+    4,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 95.0,
+   "steps": 2,
+   "actions": [
+    0,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 67.0,
+   "steps": 9,
+   "actions": [
+    0,
+    7,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 95.0,
+   "steps": 2,
+   "actions": [
+    0,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 71.0,
+   "steps": 8,
+   "actions": [
+    6,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 67.0,
+   "steps": 9,
+   "actions": [
+    7,
+    1,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 83.0,
+   "steps": 5,
+   "actions": [
+    3,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 71.0,
+   "steps": 8,
+   "actions": [
+    6,
+    1,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 39.0,
+   "steps": 15,
+   "actions": [
+    2,
+    8,
+    5
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 63.0,
+   "steps": 10,
+   "actions": [
+    8,
+    1,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 91.0,
+   "steps": 3,
+   "actions": [
+    0,
+    1,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 87.0,
+   "steps": 4,
+   "actions": [
+    2,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 67.0,
+   "steps": 9,
+   "actions": [
+    7,
+    1,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 67.0,
+   "steps": 9,
+   "actions": [
+    7,
+    1,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 71.0,
+   "steps": 8,
+   "actions": [
+    6,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 79.0,
+   "steps": 6,
+   "actions": [
+    0,
+    4,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 87.0,
+   "steps": 4,
+   "actions": [
+    0,
+    2,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 63.0,
+   "steps": 10,
+   "actions": [
+    1,
+    8,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 67.0,
+   "steps": 9,
+   "actions": [
+    1,
+    7,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 95.0,
+   "steps": 2,
+   "actions": [
+    0,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 63.0,
+   "steps": 10,
+   "actions": [
+    8,
+    1,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 67.0,
+   "steps": 9,
+   "actions": [
+    7,
+    1,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 83.0,
+   "steps": 5,
+   "actions": [
+    3,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 83.0,
+   "steps": 5,
+   "actions": [
+    3,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 79.0,
+   "steps": 6,
+   "actions": [
+    0,
+    4,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 95.0,
+   "steps": 2,
+   "actions": [
+    0,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 71.0,
+   "steps": 8,
+   "actions": [
+    0,
+    6,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 75.0,
+   "steps": 7,
+   "actions": [
+    0,
+    5,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 75.0,
+   "steps": 7,
+   "actions": [
+    5,
+    1,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 71.0,
+   "steps": 8,
+   "actions": [
+    6,
+    1,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 79.0,
+   "steps": 6,
+   "actions": [
+    4,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 87.0,
+   "steps": 4,
+   "actions": [
+    2,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 63.0,
+   "steps": 10,
+   "actions": [
+    8,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 71.0,
+   "steps": 8,
+   "actions": [
+    6,
+    1,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 79.0,
+   "steps": 6,
+   "actions": [
+    4,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 75.0,
+   "steps": 7,
+   "actions": [
+    0,
+    5,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 39.0,
+   "steps": 15,
+   "actions": [
+    2,
+    8,
+    5
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 75.0,
+   "steps": 7,
+   "actions": [
+    5,
+    1,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 79.0,
+   "steps": 6,
+   "actions": [
+    1,
+    4,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 67.0,
+   "steps": 9,
+   "actions": [
+    0,
+    7,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 87.0,
+   "steps": 4,
+   "actions": [
+    0,
+    2,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 75.0,
+   "steps": 7,
+   "actions": [
+    1,
+    5,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 63.0,
+   "steps": 10,
+   "actions": [
+    8,
+    1,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 71.0,
+   "steps": 8,
+   "actions": [
+    0,
+    6,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 75.0,
+   "steps": 7,
+   "actions": [
+    0,
+    5,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 95.0,
+   "steps": 2,
+   "actions": [
+    0,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 79.0,
+   "steps": 6,
+   "actions": [
+    4,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 39.0,
+   "steps": 15,
+   "actions": [
+    8,
+    2,
+    5
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 75.0,
+   "steps": 7,
+   "actions": [
+    5,
+    1,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 95.0,
+   "steps": 2,
+   "actions": [
+    0,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 95.0,
+   "steps": 2,
+   "actions": [
+    0,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 75.0,
+   "steps": 7,
+   "actions": [
+    5,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 42.0,
+   "steps": 14,
+   "actions": [
+    4,
+    7,
+    3
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 83.0,
+   "steps": 5,
+   "actions": [
+    0,
+    3,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 75.0,
+   "steps": 7,
+   "actions": [
+    5,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 71.0,
+   "steps": 8,
+   "actions": [
+    0,
+    6,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 67.0,
+   "steps": 9,
+   "actions": [
+    0,
+    7,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 75.0,
+   "steps": 7,
+   "actions": [
+    0,
+    5,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 71.0,
+   "steps": 8,
+   "actions": [
+    0,
+    6,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 63.0,
+   "steps": 10,
+   "actions": [
+    1,
+    8,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 39.0,
+   "steps": 15,
+   "actions": [
+    8,
+    2,
+    5
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 71.0,
+   "steps": 8,
+   "actions": [
+    0,
+    6,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 95.0,
+   "steps": 2,
+   "actions": [
+    0,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 67.0,
+   "steps": 9,
+   "actions": [
+    0,
+    7,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 42.0,
+   "steps": 14,
+   "actions": [
+    4,
+    7,
+    3
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 79.0,
+   "steps": 6,
+   "actions": [
+    4,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 46.0,
+   "steps": 13,
+   "actions": [
+    6,
+    4,
+    3
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 71.0,
+   "steps": 8,
+   "actions": [
+    6,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 71.0,
+   "steps": 8,
+   "actions": [
+    0,
+    6,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 95.0,
+   "steps": 2,
+   "actions": [
+    0,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 87.0,
+   "steps": 4,
+   "actions": [
+    2,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 67.0,
+   "steps": 9,
+   "actions": [
+    7,
+    1,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 71.0,
+   "steps": 8,
+   "actions": [
+    6,
+    1,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 79.0,
+   "steps": 6,
+   "actions": [
+    0,
+    4,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 63.0,
+   "steps": 10,
+   "actions": [
+    1,
+    8,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 95.0,
+   "steps": 2,
+   "actions": [
+    0,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 67.0,
+   "steps": 9,
+   "actions": [
+    0,
+    7,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 75.0,
+   "steps": 7,
+   "actions": [
+    5,
+    1,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 95.0,
+   "steps": 2,
+   "actions": [
+    0,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 79.0,
+   "steps": 6,
+   "actions": [
+    4,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 67.0,
+   "steps": 9,
+   "actions": [
+    1,
+    7,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 95.0,
+   "steps": 2,
+   "actions": [
+    0,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 63.0,
+   "steps": 10,
+   "actions": [
+    8,
+    1,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 71.0,
+   "steps": 8,
+   "actions": [
+    6,
+    1,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 71.0,
+   "steps": 8,
+   "actions": [
+    0,
+    6,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 95.0,
+   "steps": 2,
+   "actions": [
+    0,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 67.0,
+   "steps": 9,
+   "actions": [
+    7,
+    1,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 83.0,
+   "steps": 5,
+   "actions": [
+    3,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 83.0,
+   "steps": 5,
+   "actions": [
+    3,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 75.0,
+   "steps": 7,
+   "actions": [
+    0,
+    5,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 79.0,
+   "steps": 6,
+   "actions": [
+    4,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 71.0,
+   "steps": 8,
+   "actions": [
+    6,
+    1,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 67.0,
+   "steps": 9,
+   "actions": [
+    0,
+    7,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 79.0,
+   "steps": 6,
+   "actions": [
+    0,
+    4,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 83.0,
+   "steps": 5,
+   "actions": [
+    0,
+    3,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 95.0,
+   "steps": 2,
+   "actions": [
+    0,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 75.0,
+   "steps": 7,
+   "actions": [
+    0,
+    5,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 95.0,
+   "steps": 2,
+   "actions": [
+    0,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 91.0,
+   "steps": 3,
+   "actions": [
+    0,
+    1,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 71.0,
+   "steps": 8,
+   "actions": [
+    0,
+    6,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 67.0,
+   "steps": 9,
+   "actions": [
+    7,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 71.0,
+   "steps": 8,
+   "actions": [
+    0,
+    6,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 95.0,
+   "steps": 2,
+   "actions": [
+    0,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 71.0,
+   "steps": 8,
+   "actions": [
+    6,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 79.0,
+   "steps": 6,
+   "actions": [
+    4,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 95.0,
+   "steps": 2,
+   "actions": [
+    0,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 79.0,
+   "steps": 6,
+   "actions": [
+    4,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 95.0,
+   "steps": 2,
+   "actions": [
+    0,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 63.0,
+   "steps": 10,
+   "actions": [
+    8,
+    1,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 75.0,
+   "steps": 7,
+   "actions": [
+    5,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 63.0,
+   "steps": 10,
+   "actions": [
+    8,
+    1,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 91.0,
+   "steps": 3,
+   "actions": [
+    0,
+    1,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 83.0,
+   "steps": 5,
+   "actions": [
+    0,
+    3,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 79.0,
+   "steps": 6,
+   "actions": [
+    0,
+    4,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 71.0,
+   "steps": 8,
+   "actions": [
+    6,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 95.0,
+   "steps": 2,
+   "actions": [
+    0,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 95.0,
+   "steps": 2,
+   "actions": [
+    0,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 87.0,
+   "steps": 4,
+   "actions": [
+    2,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 95.0,
+   "steps": 2,
+   "actions": [
+    0,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 79.0,
+   "steps": 6,
+   "actions": [
+    4,
+    1,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 95.0,
+   "steps": 2,
+   "actions": [
+    0,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 95.0,
+   "steps": 2,
+   "actions": [
+    0,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 71.0,
+   "steps": 8,
+   "actions": [
+    0,
+    6,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 87.0,
+   "steps": 4,
+   "actions": [
+    0,
+    2,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 75.0,
+   "steps": 7,
+   "actions": [
+    5,
+    1,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 71.0,
+   "steps": 8,
+   "actions": [
+    1,
+    6,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 79.0,
+   "steps": 6,
+   "actions": [
+    0,
+    4,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 63.0,
+   "steps": 10,
+   "actions": [
+    8,
+    1,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 87.0,
+   "steps": 4,
+   "actions": [
+    0,
+    2,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 95.0,
+   "steps": 2,
+   "actions": [
+    0,
+    0,
+    2
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  },
+  {
+   "score": 67.0,
+   "steps": 9,
+   "actions": [
+    1,
+    7,
+    1
+   ],
+   "kills": 1.0,
+   "health": 100.0,
+   "tics": 0
+  }
+ ]
+}

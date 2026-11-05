@@ -21,7 +21,7 @@ from harness import net as N
 
 EVAL_SEED = 20261104
 PRACTICE_SEED = 7
-EPISODES = {"basic": 300, "defend_the_center": 100, "health_gathering": 100}
+EPISODES = {"basic": 300, "defend_the_center": 100, "health_gathering": 100, "deadly_corridor": 100}
 
 
 def player(kind, scenario, weights=None, seed=0):

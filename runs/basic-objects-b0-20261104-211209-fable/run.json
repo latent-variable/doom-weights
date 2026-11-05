@@ -1,0 +1,60 @@
+{
+ "id": "basic-objects-b0-20261104-211209-fable",
+ "scenario": "basic",
+ "mode": "objects",
+ "budget": 0,
+ "model": "claude-fable-5-1",
+ "effort": null,
+ "workspace": "/private/tmp/doom-weights-ws/basic-objects-b0-20261104-211209-fable/workspace",
+ "started": "20261104-211209",
+ "exit": 0,
+ "builder_minutes": 36.4,
+ "usage": {
+  "turns": 66,
+  "cost_usd": 11.970199749999999,
+  "input": 64,
+  "output": 138612,
+  "cache_read": 4483439,
+  "cache_write": 195905,
+  "denials": [
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash"
+  ],
+  "result": "The three deliverables are in the folder: `build.py`, `weights.npz` (matches what `build.py` produces, loads cleanly through the harness's `net.load`), and `explanation.md`.\n\n**Prediction: about 79 average on held-out games**, with roughly 70% on the range 74\u201384 and about 10% on something systematic being wrong (below 60). Nothing was run against Doom; the number comes from a stand-in simulator I wrote from memory of the engine's rules, where the network averages 80.4 and kills with its first shot every time.\n\nWhat the network does:\n\n- **Strafe:** it moves toward whichever half of the screen holds more of the monster.\n- **Shoot:** it presses ATTACK when the screen's centre line (the bullet's path) is inside the monster's silhouette, with at least 5% of its area on each side.\n- **Shoot early while sliding:** the pistol fires 4 tics after the press and the player keeps coasting, so at speed it presses ATTACK 4\u201314 units before the monster reaches the centre line. It infers speed from how far it has slid from the spawn point, read from the left/right wall-depth imbalance. This is worth about 2 points per game in the stand-in (80.4 against 78.3 without it).\n- **After a miss:** ammo below 50 switches the early shots off and leaves a plain, wide alignment rule; after five misses it tightens.\n\nThe main risks to the prediction:\n\n- **Physics from memory:** movement thrust, friction and pistol timing are recalled, not measured. If the player is slower than I think, early shots land short; the margins cover about 4 units of error.\n- **Sprite versus hit box:** I assume the sprite is roughly round and about 62 units wide. A sprite 10 units wider still worked in the stand-in.\n- **Depth channel:** if it carries nothing useful, the early shots never unlock and the score drops to about 78. If the room is not symmetric about the spawn point, early shots could fire from rest on one side.\n- **Known weak spot:** if the player both moves at running speed and has a tic of input lag, the af"
+ },
+ "audit": {
+  "rebuilt": true,
+  "matches_submitted": true,
+  "flags": [
+   "fallback_check.py:28: randomness (random features are fine; random search is not): sc, sh, tics = s.episode(w, m, init=(p0, v, ammo), rng=np.random.default_rng(n), **kw)",
+   "margin_check.py:18: randomness (random features are fine; random search is not): s.episode(w, m, rng=np.random.default_rng(i), **kw)",
+   "sim_check.py:97: randomness (random features are fine; random search is not): rng = rng or np.random.default_rng(0)",
+   "sim_check.py:169: randomness (random features are fine; random search is not): res = [episode(w, m, rng=np.random.default_rng(i), **kw) for i, m in enumerate(ms)]"
+  ],
+  "notes": [],
+  "tool_counts": {
+   "Read": 3,
+   "Bash": 29,
+   "Write": 12,
+   "Edit": 20,
+   "Grep": 1
+  },
+  "nonzero_weights": 35862,
+  "total_weights": 477955
+ },
+ "score": {
+  "mean": 80.06666666666666,
+  "se": 0.5383266805695276,
+  "median": 79.0,
+  "kills_mean": 1.0,
+  "action_share": [
+   0.3657,
+   0.2855,
+   0.3488
+  ]
+ }
+}

@@ -1,0 +1,51 @@
+{
+ "id": "defend_the_center-objects-b0-20261104-215649-opus-rep2",
+ "scenario": "defend_the_center",
+ "mode": "objects",
+ "budget": 0,
+ "model": "claude-opus-5-5",
+ "effort": null,
+ "workspace": "/private/tmp/doom-weights-ws/defend_the_center-objects-b0-20261104-215649-opus-rep2/workspace",
+ "started": "20261104-215649",
+ "exit": 0,
+ "builder_minutes": 7.3,
+ "usage": {
+  "turns": 14,
+  "cost_usd": 1.2172994000000004,
+  "input": 24,
+  "output": 36030,
+  "cache_read": 549217,
+  "cache_write": 48345,
+  "denials": [
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash"
+  ],
+  "result": "I've written all three files (`build.py`, `weights.npz`, `explanation.md`). The network shoots only when a standing monster is on the crosshair, otherwise turns toward the side with more monster mass, and turns right to scan when it sees nothing. My prediction is an average score of about 6, at moderate-to-low confidence; it rests on one assumption I couldn't verify (below).\n\n**How it works:** it only looks at the strip of the screen just above the horizon (grid rows 4\u201312). A standing monster is taller than the player's eye level, so part of it always shows there. A corpse is shorter, so it never does. That matters because the game still labels a corpse as a monster: without this filter, a corpse left on the crosshair could make the network fire until the ammo ran out.\n\n- **Layer 1:** works out how much monster is in that strip for each of the 40 columns, ignoring slivers. It also checks how much of it is in the two columns either side of the crosshair, so it can tell when one monster covers the aim line.\n- **Layer 2:** adds up the monster amounts for the left and right halves of the screen, and turns the crosshair check into a sharp on/off \"fire now\" signal.\n- **Layer 3:** \"fire now\" is weighted so heavily that it always wins over turning. Otherwise it turns toward the side with more monster, and turns right by default.\n\n**Checks:** I ran it on synthetic frames I drew myself (script in `test_synthetic.py`). It shoots centred monsters from close range out to 600 map units, including one 3 pixels off centre. It turns the right way for monsters off to either side and scans when nothing is visible. It doesn't shoot corpses or late death-animation frames, and it ignores a corpse in the centre to turn toward a live monster. This has never been run against the real game.\n\n**The assumption:** I believe the scenario shows the status bar at the bottom of the screen, which would put the horizon at pixel row 104. If there's no status bar, the network only reacts to monsters th"
+ },
+ "audit": {
+  "rebuilt": true,
+  "matches_submitted": true,
+  "flags": [],
+  "notes": [],
+  "tool_counts": {
+   "Read": 1,
+   "Bash": 9,
+   "Write": 3
+  },
+  "nonzero_weights": 480,
+  "total_weights": 478083
+ },
+ "score": {
+  "mean": 6.8,
+  "se": 0.36872699380381135,
+  "median": 6.0,
+  "kills_mean": 7.8,
+  "action_share": [
+   0.0594,
+   0.8662,
+   0.0743
+  ]
+ }
+}

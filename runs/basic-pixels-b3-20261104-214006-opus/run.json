@@ -1,0 +1,58 @@
+{
+ "id": "basic-pixels-b3-20261104-214006-opus",
+ "scenario": "basic",
+ "mode": "pixels",
+ "budget": 3,
+ "model": "claude-opus-5-5",
+ "effort": null,
+ "workspace": "/private/tmp/doom-weights-ws/basic-pixels-b3-20261104-214006-opus/workspace",
+ "started": "20261104-214006",
+ "exit": 0,
+ "builder_minutes": 4.3,
+ "usage": {
+  "turns": 39,
+  "cost_usd": 1.0080467999999998,
+  "input": 56,
+  "output": 19952,
+  "cache_read": 1151034,
+  "cache_write": 47322,
+  "denials": [
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash"
+  ],
+  "result": "The network scored a mean of **79.8** on the last practice round (games: 79, 75, 75, 95, 75). In all 10 games of the last two rounds it killed the monster with a single shot. I expect the held-out average to be about 77, most likely between 70 and 83.\n\n**What it does:**\n- **Colour feature:** the room's walls and floor are brown and the ceiling is gray, while the monster is blue and red. For each 8 \u00d7 8 cell I score R + B \u2212 2G. That is about 0 on brown and gray (\u00b10.02) and +0.05 to +0.16 on the monster.\n- **Layer 1:** 40 units, one per screen column. Each adds up that score over rows 5\u201319, which skips the gun at the bottom of the screen, and subtracts a threshold of 0.15. A column containing the monster sums to 0.3\u20130.55; other columns stay at 0.16 or below.\n- **Layer 2:** three units: how far the monster's mass sits left of the crosshair, how far it sits right of it, and how much of it is in the six columns around the crosshair.\n- **Layer 3:** it strafes toward the monster and shoots once the monster's centre is within about 2 columns of the crosshair. That window is slightly wide on purpose: the pistol fires about 4 tics after the button is pressed, and the strafe keeps carrying the aim onto the monster during that delay.\n\n**How the practice rounds went:**\n1. My first version looked for red, but the walls are also reddish, so it strafed right every game and scored \u2212300. That run showed me the real colours.\n2. The colour feature above scored 75. At first I thought every first shot missed, because each game used two ATTACK steps. The scores show only one bullet was spent (95 = 106 \u2212 5 \u2212 6 tics), so the second step was just the firing delay.\n3. Widening the shooting window from 1.5 to 2 columns fired one step earlier, still with one-shot kills, for a mean of 79.8.\n\n**Risks:** all the remaining loss is the time spent lining up, so monsters that spawn near a side wall give lower scores (around 60\u201365). There is a small chance of a miss if the monster spawns about 2 columns"
+ },
+ "audit": {
+  "rebuilt": true,
+  "matches_submitted": true,
+  "flags": [
+   "command: looking outside the workspace: cd /private/tmp/doom-weights-ws/basic-pixels-b3-20261104-214006-opus/workspace; ls -la harness_src .venv; ls /Users/linovaldovinos/Documents/LatentPlayground/do"
+  ],
+  "notes": [],
+  "tool_counts": {
+   "Read": 6,
+   "Bash": 20,
+   "Write": 7,
+   "Glob": 2,
+   "Edit": 2,
+   "Grep": 1
+  },
+  "nonzero_weights": 1929,
+  "total_weights": 477955
+ },
+ "score": {
+  "mean": 77.53333333333333,
+  "se": 0.9858908034506165,
+  "median": 79.0,
+  "kills_mean": 1.0,
+  "action_share": [
+   0.3276,
+   0.2923,
+   0.3801
+  ]
+ }
+}

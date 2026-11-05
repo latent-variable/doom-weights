@@ -1,0 +1,51 @@
+{
+ "id": "basic-pixels-b10-20261104-211214-opus",
+ "scenario": "basic",
+ "mode": "pixels",
+ "budget": 10,
+ "model": "claude-opus-5-5",
+ "effort": null,
+ "workspace": "/private/tmp/doom-weights-ws/basic-pixels-b10-20261104-211214-opus/workspace",
+ "started": "20261104-211214",
+ "exit": 0,
+ "builder_minutes": 5.2,
+ "usage": {
+  "turns": 35,
+  "cost_usd": 1.2075872,
+  "input": 58,
+  "output": 26707,
+  "cache_read": 1322316,
+  "cache_write": 51094,
+  "denials": [
+   "Bash",
+   "Bash",
+   "Bash"
+  ],
+  "result": "The network is built and works: across the last three practice rounds it killed the monster in all 15 games, each time with a single shot, for averages of 74.2, 76.6 and 72.6. The final version is the one that scored 76.6. I expect it to average about **75** on the held-out games (likely 70\u201380), and I'm about 80% confident the average lands between 65 and 85.\n\n**How it works:**\n- **Spotting the monster:** the room is gray and brown, and for those colours red + blue \u2212 2\u00d7green is almost exactly zero. The monster is red and blue, so it stands out clearly on that one measure.\n- **Layer 1:** 40 units, one per screen column, each measuring how much monster is in that column. The gun area at the bottom of the screen is ignored, and a small threshold filters out faint noise where the walls meet.\n- **Layer 2:** works out how far the monster is left or right of the crosshair, and whether one is visible at all.\n- **Output:** strafe toward the monster when it's more than 1.5 columns off-centre, otherwise shoot. If no monster is visible, strafe left rather than waste ammo.\n\n**Choices made from practice:**\n- The muzzle flash also shows up on the colour measure, but it sits evenly around the crosshair. So I used a fixed width for the \"close enough to shoot\" zone, and the flash can't widen it.\n- The player keeps sliding after it stops strafing, and the bullet leaves a few game tics after pressing attack. A \u00b11.5-column zone therefore fires slightly early and the shot lands near the centre.\n- I tried \u00b12.0 for one round and it also hit every time. I went back to \u00b11.5 because at spawn, standing still, a shot from 2 columns off is close to missing, and a miss costs about 20 points. Each round used different games, so the score differences between rounds are mostly luck.\n\nAlmost all of the remaining score loss is time spent strafing across to the monster, which the network already does at full speed. The two risks I see are an occasional miss and a monster sitting right against a side wa"
+ },
+ "audit": {
+  "rebuilt": true,
+  "matches_submitted": true,
+  "flags": [],
+  "notes": [],
+  "tool_counts": {
+   "Read": 4,
+   "Bash": 23,
+   "Write": 3,
+   "Edit": 4
+  },
+  "nonzero_weights": 2608,
+  "total_weights": 477955
+ },
+ "score": {
+  "mean": 78.10666666666667,
+  "se": 0.602045812346127,
+  "median": 75.0,
+  "kills_mean": 1.0,
+  "action_share": [
+   0.3824,
+   0.2978,
+   0.3198
+  ]
+ }
+}

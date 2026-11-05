@@ -1,0 +1,56 @@
+{
+ "id": "deadly_corridor-objects-b0-20261104-212941-opus",
+ "scenario": "deadly_corridor",
+ "mode": "objects",
+ "budget": 0,
+ "model": "claude-opus-5-5",
+ "effort": null,
+ "workspace": "/private/tmp/doom-weights-ws/deadly_corridor-objects-b0-20261104-212941-opus/workspace",
+ "started": "20261104-212941",
+ "exit": 0,
+ "builder_minutes": 10.1,
+ "usage": {
+  "turns": 28,
+  "cost_usd": 1.9087258000000005,
+  "input": 42,
+  "output": 51734,
+  "cache_read": 1348109,
+  "cache_write": 75532,
+  "denials": [
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash"
+  ],
+  "result": "I've written `build.py`, `weights.npz` and `explanation.md`. The weights pass the harness's own loader check, but the network has never played, so its real score is unknown. I predict an average of about **+250, with low confidence** (80 % range roughly \u221250 to +800).\n\n**What the network does.** It follows a fixed list of rules, highest priority first:\n1. **Low health (below 30):** stop fighting and run for the vest while shooting. It still turns back first if it is facing away from the corridor or the vest. The death penalty is only \u2212100, and distance plus the +1000 vest are worth more.\n2. **Monster close to the crosshair but off-centre:** strafe toward it. Strafing moves the aim by small steps, which turning can't do.\n3. **Live monster under the crosshair:** attack.\n4. **Monster further off:** turn toward the side with more monster pixels. It only turns when the target is more than about 14\u00b0 away. Doom's turn step grows when the turn key is held, so a narrower zone could make the aim swing back and forth.\n5. **No target:** turn back toward the deep end of the corridor, using the depth readings. If the vest is visible off to one side, turn toward it.\n6. **Otherwise:** walk forward.\n\n**Telling live monsters from corpses.** `encode` labels by name only, so I assumed a dead zombie still shows up as a monster. A standing zombie always pokes above eye level and a corpse never does. So only monster pixels above the horizon line count as targets. Without this, the network could stand shooting a corpse forever.\n\n**Main risk.** I assumed the Doom status bar is drawn at the bottom of the screen, which puts the horizon between rows 12 and 13. If there is no status bar, the network only notices monsters closer than about 150 units. It then mostly walks forward shooting at whatever is straight ahead, and I'd expect roughly +100 to +300.\n\n**What I tested.** All checks used frames I built myself, from a simple model of the corridor's geometry. Scripts are in `tools/`:\n- **Corpses:"
+ },
+ "audit": {
+  "rebuilt": true,
+  "matches_submitted": true,
+  "flags": [],
+  "notes": [],
+  "tool_counts": {
+   "Read": 3,
+   "Bash": 12,
+   "Write": 7,
+   "Edit": 5
+  },
+  "nonzero_weights": 4406,
+  "total_weights": 478471
+ },
+ "score": {
+  "mean": -4.394492797851562,
+  "se": 5.174368422095897,
+  "median": -11.768974304199219,
+  "kills_mean": 0.25,
+  "action_share": [
+   0.3333,
+   0.0011,
+   0.0944,
+   0.191,
+   0.2102,
+   0.0107,
+   0.1593
+  ]
+ }
+}

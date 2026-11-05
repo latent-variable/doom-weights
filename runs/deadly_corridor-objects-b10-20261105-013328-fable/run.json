@@ -1,0 +1,61 @@
+{
+ "id": "deadly_corridor-objects-b10-20261105-013328-fable",
+ "agent": "claude",
+ "scenario": "deadly_corridor",
+ "mode": "objects",
+ "budget": 10,
+ "model": "claude-fable-5-1",
+ "effort": null,
+ "workspace": "/private/tmp/doom-weights-ws/deadly_corridor-objects-b10-20261105-013328-fable/workspace",
+ "started": "20261105-013328",
+ "exit": 0,
+ "builder_minutes": 72.7,
+ "usage": {
+  "turns": 95,
+  "cost_usd": 33.04370800000002,
+  "input": 146,
+  "output": 364004,
+  "cache_read": 19277232,
+  "cache_write": 501137,
+  "denials": [
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash"
+  ],
+  "result": "The three deliverables are in the folder: `build.py`, `weights.npz` (built from it) and `explanation.md`. The final network is the one that played the last practice round: it won 3 of 5 games, mean 1,649.\n\n**Prediction for held-out games: about 1,600 on average**, with low confidence (80% range roughly 1,250 to 1,950). A game is close to all-or-nothing, about 2,277 for reaching the vest and a few hundred for dying on the way, and the last five versions each won 3 of 5.\n\nHow the network plays:\n- **Shoot** when a monster is solidly on the crosshair, at any range. Monsters die to one shot and stay asleep until they can see the player, so half-hidden ones behind door frames get shot for free.\n- **Turn** the heavier side onto the crosshair, with a deliberately lopsided rule (always for the right side, only when far out for the left). Held turns speed up to about 14\u00b0 a step, and symmetric rules made the view flip left-right forever.\n- **Otherwise** side-step towards a close monster, or walk on if it is far.\n- **With no monster in view**, walk to the vest.\n\nAll ten practice rounds are used:\n\n| Round | Mean | Wins |\n|---|---|---|\n| 1 | 1,968 | 4/5 |\n| 2 | 660 | 1/5 |\n| 3 | 1,321 | 3/5 |\n| 4 | 1,852 | 4/5 |\n| 5 | 1,064 | 2/5 |\n| 6 | 1,491 | 3/5 |\n| 7 | 1,524 | 3/5 |\n| 8 | 1,546 | 3/5 |\n| 9 | 1,571 | 3/5 |\n| 10 (final) | 1,649 | 3/5 |\n\nRounds 1 and 4 scored higher than the final version, but the gap is within what five games can show. I kept the last version because it has no known way to get stuck; the earlier ones lost games to turn loops and to side-stepping against an invisible wall.\n\nKnown weaknesses of the final network:\n- The opening fight costs about 25 health on average, sometimes over 40.\n- A far monster just left of the crosshair is walked towards rather than shot; one such approach cost 42 health in the last round. I found no loop-safe turn rule for that case and had no practice rounds left to test one.\n- Ammunition is not visible to the network, so very long fire"
+ },
+ "audit": {
+  "rebuilt": true,
+  "matches_submitted": true,
+  "flags": [],
+  "notes": [],
+  "tool_counts": {
+   "Read": 19,
+   "Bash": 65,
+   "Write": 8,
+   "Edit": 2
+  },
+  "practice_rounds_seen": 10,
+  "nonzero_weights": 11350,
+  "total_weights": 478471
+ },
+ "score": {
+  "mean": 1674.060355529785,
+  "se": 81.95143885277568,
+  "median": 2276.9973220825195,
+  "kills_mean": 5.27,
+  "action_share": [
+   0.4756,
+   0.0034,
+   0.0027,
+   0.1877,
+   0.1593,
+   0.1714,
+   0.0
+  ]
+ }
+}

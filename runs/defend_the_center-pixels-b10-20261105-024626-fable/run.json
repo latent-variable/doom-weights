@@ -1,0 +1,64 @@
+{
+ "id": "defend_the_center-pixels-b10-20261105-024626-fable",
+ "agent": "claude",
+ "scenario": "defend_the_center",
+ "mode": "pixels",
+ "budget": 10,
+ "model": "claude-fable-5-1",
+ "effort": null,
+ "workspace": "/private/tmp/doom-weights-ws/defend_the_center-pixels-b10-20261105-024626-fable/workspace",
+ "started": "20261105-024626",
+ "exit": 0,
+ "builder_minutes": 70.0,
+ "usage": {
+  "turns": 119,
+  "cost_usd": 32.30525525,
+  "input": 170,
+  "output": 336212,
+  "cache_read": 24721421,
+  "cache_write": 465630,
+  "denials": [
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash"
+  ],
+  "result": "The three deliverables are in the folder: `build.py`, `weights.npz` (its output) and `explanation.md`. I predict about **23** on held-out games (ceiling 25), with roughly 70% confidence that the mean lands between 21.5 and 24.5.\n\nAll 10 practice rounds are used. The submitted weights scored 24, 22, 24, 24, 21 (mean 23.0) in round 8. Rounds 9 and 10 played the same design with every threshold nudged about 4% to get fresh trajectories, and scored 24.0 and 24.2. Across those 15 games there was no early death and the worst game was 21.\n\nThe network is stateless and does three things:\n\n- **Shoot** when a monster covers both screen-centre columns at eye level and the pistol is idle.\n- **Turn right** toward a near monster on the right (near monsters of either kind by their head height, demons out to roughly 400 units by body colour).\n- **Scan left** otherwise, and always while the pistol recoils, which sweeps about 33\u00b0 past each kill and prevents a wasted second shot.\n\nThree bugs found from practice screens accounted for most of the improvement from roughly 20 to roughly 23.5:\n\n- **Recoil veto too weak:** a large adjacent monster could out-vote it, so bullets were wasted on refires.\n- **Blood squares:** they corrupted the wall-colour reference and made the turning dither while being hit.\n- **Arm on the aim line:** a marine in melee with its arm, not its body, on the line was never shot.\n\nThings you should know before relying on the prediction:\n\n- **Same five seeds:** practice reuses them every round, so the 15 games are not 15 independent seeds; that is why I shade 23.7 down to 23.\n- **Early deaths:** earlier designs died early (8\u201316 kills) in roughly a quarter of their games, each costing about 12 points. I believe this is fixed, but 15 games cannot rule out a rate of a few percent.\n- **Unmeasured engine facts:** turn speed and pistol timing come from my memory of the engine source. The policy does not depend on their exact values, but the 33\u00b0 figure does.\n- **Geometric m"
+ },
+ "audit": {
+  "rebuilt": true,
+  "matches_submitted": true,
+  "flags": [
+   "blood.py:8: randomness (random features are fine; random search is not): rng = np.random.default_rng(0)",
+   "blood.py:21: a long loop (search?): for _ in range(3000):",
+   "sim.py:74: randomness (random features are fine; random search is not): rng = np.random.default_rng(seed)"
+  ],
+  "notes": [],
+  "tool_counts": {
+   "Read": 28,
+   "Bash": 72,
+   "Write": 16,
+   "ToolSearch": 1,
+   "TaskStop": 1
+  },
+  "practice_rounds_seen": 10,
+  "nonzero_weights": 952,
+  "total_weights": 478083
+ },
+ "score": {
+  "mean": 23.15,
+  "se": 0.2999579095052295,
+  "median": 24.0,
+  "kills_mean": 24.15,
+  "action_share": [
+   0.7592,
+   0.0543,
+   0.1865
+  ]
+ }
+}

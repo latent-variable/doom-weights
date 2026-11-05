@@ -1,0 +1,59 @@
+{
+ "id": "basic-pixels-b0-20261104-211215-fable",
+ "scenario": "basic",
+ "mode": "pixels",
+ "budget": 0,
+ "model": "claude-fable-5-1",
+ "effort": null,
+ "workspace": "/private/tmp/doom-weights-ws/basic-pixels-b0-20261104-211215-fable/workspace",
+ "started": "20261104-211215",
+ "exit": 0,
+ "builder_minutes": 27.0,
+ "usage": {
+  "turns": 33,
+  "cost_usd": 8.357546250000002,
+  "input": 40,
+  "output": 105096,
+  "cache_read": 1986025,
+  "cache_write": 130292,
+  "denials": [
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash"
+  ],
+  "result": "The three deliverables are in the folder: `build.py`, `weights.npz` (its output, accepted by the harness's own loader) and `explanation.md`. The network has never played the real game, so everything below about scores comes from my own synthetic frames and a crude physics model.\n\n**What the network does**\n- **Layer 1:** 40 units, one per screen column, measure how red that column is in pixel rows 88\u2013127, which should hold only far wall and monster. Redness is `R \u2212 1.25G + 0.25B`, which is exactly zero for any gray, and the local wall colour is subtracted.\n- **Layer 2:** drops columns holding under 8% of all the redness, and computes whether both columns touching the screen centre hold more than 5% of it.\n- **Layer 3:** strafes towards the side with more red, and attacks once the aim line cuts through the monster with a margin on both sides.\n\nThe shoot test is relative to the monster's own size, so it does not depend on how far away the monster is. By my arithmetic on Doom's strafing inertia and the pistol's 4-tic firing delay, the shoot zone must be between about \u00b123 and \u00b131 map units; the test gives about \u00b124.\n\n**Prediction:** about 74 average on held-out games.\n- In my own model the nominal case scores 77.5 with every kill on the first shot.\n- I put about 70% on the real average landing between 65 and 82.\n- I put about 15\u201320% on a much lower score, because I could not see the real frames. The main ways it could break are:\n  - the monster is not red in the way I assumed;\n  - the pistol sprite or something else reddish reaches into those rows at the screen centre;\n  - the monster sits outside that row band, in which case the network strafes left for the whole episode (\u2212300).\n\nBesides the deliverables, the folder also holds my check scripts (`check.py`, `stress.py`, `stress2.py`, `stress3.py`, `stress4.py`) and `__pycache__` directories, including one inside `harness_src`. I tried to delete the scratch ones but the delete command was not approved, so they are still t"
+ },
+ "audit": {
+  "rebuilt": true,
+  "matches_submitted": true,
+  "flags": [
+   "check.py:16: randomness (random features are fine; random search is not): rng = np.random.default_rng(0)",
+   "check.py:26: randomness (random features are fine; random search is not): r = np.random.default_rng(seed) if seed is not None else rng",
+   "check.py:49: randomness (random features are fine; random search is not): pat = np.random.default_rng(stain_seed).standard_normal((64, 16, 3)) * stain",
+   "check.py:118: randomness (random features are fine; random search is not): r = np.random.default_rng(int(abs(u0) * 1000) + 7)",
+   "stress.py:17: randomness (random features are fine; random search is not): r = np.random.default_rng(seed + 1000)"
+  ],
+  "notes": [],
+  "tool_counts": {
+   "Read": 1,
+   "Bash": 18,
+   "Write": 8,
+   "Edit": 5
+  },
+  "nonzero_weights": 6266,
+  "total_weights": 477955
+ },
+ "score": {
+  "mean": -273.23333333333335,
+  "se": 4.848139394934561,
+  "median": -300.0,
+  "kills_mean": 0.1,
+  "action_share": [
+   0.6469,
+   0.3517,
+   0.0014
+  ]
+ }
+}

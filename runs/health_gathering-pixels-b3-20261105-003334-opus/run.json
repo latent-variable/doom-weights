@@ -1,0 +1,59 @@
+{
+ "id": "health_gathering-pixels-b3-20261105-003334-opus",
+ "agent": "claude",
+ "scenario": "health_gathering",
+ "mode": "pixels",
+ "budget": 3,
+ "model": "claude-opus-5-5",
+ "effort": null,
+ "workspace": "/private/tmp/doom-weights-ws/health_gathering-pixels-b3-20261105-003334-opus/workspace",
+ "started": "20261105-003334",
+ "exit": 0,
+ "builder_minutes": 7.2,
+ "usage": {
+  "turns": 47,
+  "cost_usd": 2.0156028,
+  "input": 66,
+  "output": 38561,
+  "cache_read": 2113554,
+  "cache_write": 102676,
+  "denials": [
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash"
+  ],
+  "result": "The finished network survived the full 2100 tics in all 5 games of the last practice round, ending each with 84\u2013100 health. 2100 is the maximum possible score.\n\n**How it plays** (every weight set by hand in `build.py`):\n- **Finding medkits:** in this room the medkits are grey canisters with a green band. Grey means equal red, green and blue. I picked a colour weighting that reads zero on the green floor, zero or below on the stone walls, and clearly positive on grey. The first layer runs it over each screen column at three distances (far, mid, near), each with its own noise threshold.\n- **Steering:** the second layer adds up how much medkit it sees and whether it lies left or right of centre. It then walks straight at a centred medkit, curves toward one that's off to the side, or turns in place if it's far to the side.\n- **Walls:** a \"wall-ness\" colour check on the lower part of the screen spots walls. If a wall is right ahead, it always turns right. If one is getting close, it curves toward the more open side while still walking.\n- **Nothing in view:** it walks forward.\n\n**Practice rounds:**\n\n| Round | Network | Mean score | Notes |\n|---|---|---|---|\n| 1 | Placeholder, only walked forward | 284 | Used to look at the screens |\n| 2 | Full design | 1510 | One game died at 444 |\n| 3 | Fixed right turn at walls | 2100 | All 5 games hit the maximum |\n\nThe round-2 death happened because the network has no memory. In corners, \"turn toward the open side\" kept switching direction as the view rotated, so it rocked back and forth until it died. Always turning right at a wall removed that.\n\n**Prediction:** a held-out mean of about 2000, and I'm about 70% confident it lands between 1850 and 2100. The risks are layouts with few medkits nearby, getting wedged against a wall at an odd angle, or colours I didn't see in practice.\n\nI tested only on frames from the practice games and on fake frames I made by pasting a medkit into a real screenshot. No weights were fitted to data.\n\nFile"
+ },
+ "audit": {
+  "rebuilt": true,
+  "matches_submitted": true,
+  "flags": [
+   "command: looking outside the workspace: cd tools && python3 -c \"\nfrom png import read_png\nimport numpy as np\nim=read_png('../practice_runs/01/screen_step000.png'); print(im.shape)\nfor y in range(112,1"
+  ],
+  "notes": [],
+  "tool_counts": {
+   "Bash": 28,
+   "Write": 8,
+   "Read": 8,
+   "Edit": 2
+  },
+  "practice_rounds_seen": 3,
+  "nonzero_weights": 3935,
+  "total_weights": 478213
+ },
+ "score": {
+  "mean": 2100.0,
+  "se": 0.0,
+  "median": 2100.0,
+  "kills_mean": 0.0,
+  "action_share": [
+   0.0383,
+   0.1351,
+   0.4149,
+   0.1705,
+   0.2412
+  ]
+ }
+}

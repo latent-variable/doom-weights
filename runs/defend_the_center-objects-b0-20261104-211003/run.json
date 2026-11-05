@@ -1,0 +1,52 @@
+{
+ "id": "defend_the_center-objects-b0-20261104-211003",
+ "scenario": "defend_the_center",
+ "mode": "objects",
+ "budget": 0,
+ "model": "claude-opus-5-5",
+ "effort": null,
+ "workspace": "/private/tmp/doom-weights-ws/defend_the_center-objects-b0-20261104-211003/workspace",
+ "started": "20261104-211003",
+ "exit": 0,
+ "builder_minutes": 7.5,
+ "usage": {
+  "turns": 13,
+  "cost_usd": 1.1388268000000001,
+  "input": 24,
+  "output": 33678,
+  "cache_read": 549694,
+  "cache_write": 44404,
+  "denials": [
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash"
+  ],
+  "result": "I've written `build.py`, run it to produce `weights.npz`, and written `explanation.md`. The weights load cleanly through the harness's own checker in `net.py`. On ten synthetic frames I drew by hand, the network picked the action I meant every time. That's the only testing possible here: it has never played a real game.\n\n**What the network does:**\n- **Shoot** when a monster covers both screen columns 19 and 20, which means it is under the crosshair at x = 160.\n- **Otherwise turn** toward the side with more monster on screen. Bigger means closer, so it goes for the most dangerous monster first, with a slight preference for ones near the centre.\n- **With nothing in view**, keep turning left to scan.\n- **Only the part of the screen above the horizon counts.** Standing monsters are taller than the player's eye level, so some of each one always shows above it. Corpses lying on the floor never do, so it shouldn't shoot or chase dead bodies.\n\n**Main known weakness:** after a kill, the dying monster probably still looks alive under the crosshair for about 12 game tics. The network is likely to keep holding ATTACK, and the pistol then fires a second, wasted shot. With only the current frame to go on, I found no reliable way to avoid this, so expect up to about 2 bullets per kill. Small, distant monsters can also make it turn back and forth briefly, because each turn step is coarser than their width.\n\n**Prediction:** an average score of about 8, plausibly anywhere from 4 to 12, with low-to-moderate confidence. The biggest unknowns are:\n- how the game labels monsters that are dying;\n- the real turning speed;\n- whether these monsters really are taller than eye level."
+ },
+ "audit": {
+  "rebuilt": true,
+  "matches_submitted": true,
+  "flags": [],
+  "notes": [],
+  "tool_counts": {
+   "Read": 1,
+   "Bash": 8,
+   "Write": 3
+  },
+  "nonzero_weights": 673,
+  "total_weights": 478083
+ },
+ "score": {
+  "mean": 16.37,
+  "se": 0.5615014144094728,
+  "median": 16.0,
+  "kills_mean": 17.37,
+  "action_share": [
+   0.5446,
+   0.3073,
+   0.148
+  ]
+ }
+}

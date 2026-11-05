@@ -1,0 +1,60 @@
+{
+ "id": "deadly_corridor-objects-b10-20261104-214435-opus",
+ "scenario": "deadly_corridor",
+ "mode": "objects",
+ "budget": 10,
+ "model": "claude-opus-5-5",
+ "effort": null,
+ "workspace": "/private/tmp/doom-weights-ws/deadly_corridor-objects-b10-20261104-214435-opus/workspace",
+ "started": "20261104-214435",
+ "exit": 0,
+ "builder_minutes": 11.2,
+ "usage": {
+  "turns": 75,
+  "cost_usd": 2.6322957999999996,
+  "input": 100,
+  "output": 56086,
+  "cache_read": 3392919,
+  "cache_write": 103949,
+  "denials": [
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash"
+  ],
+  "result": "The network is finished: `build.py`, `weights.npz` and `explanation.md` are in the folder. Over 10 practice games it averaged about **1,145**. I expect about **1,100** on held-out games, with a 70% range of roughly 750\u20131,450.\n\n**How it plays.** The network works as a list of rules, most urgent first:\n1. **Shoot** if a monster is on the crosshair.\n2. **Walk forward and shoot** if a small, distant monster is roughly ahead. Turning is too coarse to aim at something that far away, so closing in works better.\n3. **Turn toward the monster nearest the crosshair.** Picking the nearest one, not the average position of all monsters, stops it flipping between the two monsters you see at the start.\n4. **Turn toward the armour vest** if it's visible but off to one side.\n5. **Otherwise, turn toward the deeper side of the view** to find the corridor again after a side fight.\n6. **If facing a wall up close, turn right.**\n7. **Otherwise walk forward.**\n\nThe first layer computes 12 simple screen totals (monster pixels near the crosshair, which side the vest is on, how deep the view is, and so on). The second layer turns each into an on/off switch, and the last layer ranks them. A script in `tools/` builds 17 made-up frames and checks the network picks the intended action; all 17 pass. `build.py` rebuilds `weights.npz` exactly as tested.\n\n**Games go one of two ways.** About 40% reach the vest with all 6 monsters killed and score about 2,280. The rest die after 2\u20134 kills and score about 150\u2013600. That 40% comes from only 10 games, so the real rate could be anywhere from about 20% to 60%, which is why the range is wide.\n\n**Practice rounds.** I used 9 of the 10. Three ideas made things worse and I removed them:\n- **Strafing to aim:** pinned the player against the wall (round 3).\n- **Steering toward any pickup:** the network chased ammo dropped by dead monsters instead of the vest (round 4).\n- **Walking over dropped weapons** for a better gun than the pistol: the network turned back and fo"
+ },
+ "audit": {
+  "rebuilt": true,
+  "matches_submitted": true,
+  "flags": [],
+  "notes": [],
+  "tool_counts": {
+   "Read": 11,
+   "Bash": 44,
+   "Write": 9,
+   "Edit": 10
+  },
+  "nonzero_weights": 5074,
+  "total_weights": 478471
+ },
+ "score": {
+  "mean": 1340.5832691955566,
+  "se": 93.73293331301885,
+  "median": 716.7453994750977,
+  "kills_mean": 4.76,
+  "action_share": [
+   0.1971,
+   0.0,
+   0.0,
+   0.1265,
+   0.1389,
+   0.3626,
+   0.1748
+  ]
+ }
+}

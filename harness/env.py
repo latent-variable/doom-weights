@@ -65,6 +65,21 @@ SCENARIOS = {
             "2,100 tics. Higher score is better: stay alive by collecting medkits."
         ),
     },
+    "deadly_corridor": {
+        "cfg": "deadly_corridor.cfg",
+        "actions": [["MOVE_FORWARD"], ["MOVE_LEFT"], ["MOVE_RIGHT"], ["TURN_LEFT"], ["TURN_RIGHT"],
+                    ["ATTACK"], ["MOVE_FORWARD", "ATTACK"]],
+        "vars": [("HEALTH", 100.0)],
+        "rules": (
+            "A long straight corridor. The player starts at one end facing down it; a green armour vest "
+            "lies at the far end. Six monsters that shoot back (zombie soldiers with pistols, shotguns and "
+            "chainguns) stand in alcoves along the corridor, three on each side. Played on the hardest skill "
+            "level, so running straight for the vest usually gets the player killed. "
+            "Reward: the change in distance to the vest each tic (+ for getting closer, - for moving away), "
+            "+1,000 for reaching the vest, -100 on death. The episode ends on reaching the vest, at death, "
+            "or after 2,100 tics. Higher score is better."
+        ),
+    },
 }
 
 MODES = {

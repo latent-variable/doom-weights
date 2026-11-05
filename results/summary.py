@@ -11,7 +11,7 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
 PY = REPO / ".venv" / "bin" / "python"
-SCEN = ["basic", "defend_the_center", "health_gathering"]
+SCEN = ["basic", "defend_the_center", "health_gathering", "deadly_corridor"]
 MODES = ["objects", "pixels"]
 
 

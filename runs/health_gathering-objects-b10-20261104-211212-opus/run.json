@@ -1,0 +1,53 @@
+{
+ "id": "health_gathering-objects-b10-20261104-211212-opus",
+ "scenario": "health_gathering",
+ "mode": "objects",
+ "budget": 10,
+ "model": "claude-opus-5-5",
+ "effort": null,
+ "workspace": "/private/tmp/doom-weights-ws/health_gathering-objects-b10-20261104-211212-opus/workspace",
+ "started": "20261104-211212",
+ "exit": 0,
+ "builder_minutes": 1.9,
+ "usage": {
+  "turns": 12,
+  "cost_usd": 0.3504692000000001,
+  "input": 22,
+  "output": 6844,
+  "cache_read": 311466,
+  "cache_write": 18901,
+  "denials": [
+   "Bash",
+   "Bash",
+   "Bash"
+  ],
+  "result": "I wrote the network by hand, and its first practice run got the maximum score in all 5 games: each survived the full 2,100 tics and ended at 100 health. I stopped after that one round, leaving the other 9 unused, because full health at the end leaves little room to improve.\n\nHow it works:\n- **First layer:** it measures how much medkit is visible in each of the 40 screen columns, counting lower rows more because they're closer. Two more units catch medkits that are close but far off to the side, and one detects a wall close in front.\n- **Second layer:** it groups the columns into left, centre and right, and passes the side and wall signals through.\n- **Output:** the agent heads toward the biggest, closest medkit: forward if it's ahead, forward while turning if it's to one side, and turning in place if it's close and well off to the side. With no medkit in view it walks in a wide left-hand circle to search the room, and turns in place when it's about to hit a wall. Any visible medkit overrides the wall turn, so it still picks up medkits next to walls.\n\nI predict an average of about 2,090 on the held-out games, and I'm about 80% confident it will be above 2,000. The main risk is a rare game where the agent gets stuck against a wall or in a corner with no medkit in view.\n\nFiles are in the workspace folder:\n- `build.py`\n- `weights.npz`\n- `explanation.md`"
+ },
+ "audit": {
+  "rebuilt": true,
+  "matches_submitted": true,
+  "flags": [],
+  "notes": [],
+  "tool_counts": {
+   "Read": 1,
+   "Bash": 7,
+   "Write": 2,
+   "Edit": 1
+  },
+  "nonzero_weights": 1455,
+  "total_weights": 478213
+ },
+ "score": {
+  "mean": 2094.0,
+  "se": 6.0,
+  "median": 2100.0,
+  "kills_mean": 0.0,
+  "action_share": [
+   0.0971,
+   0.026,
+   0.2748,
+   0.3778,
+   0.2243
+  ]
+ }
+}

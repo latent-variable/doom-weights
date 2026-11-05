@@ -1,0 +1,56 @@
+{
+ "id": "basic-objects-b10-20261104-211208-opus",
+ "scenario": "basic",
+ "mode": "objects",
+ "budget": 10,
+ "model": "claude-opus-5-5",
+ "effort": null,
+ "workspace": "/private/tmp/doom-weights-ws/basic-objects-b10-20261104-211208-opus/workspace",
+ "started": "20261104-211208",
+ "exit": 0,
+ "builder_minutes": 3.4,
+ "usage": {
+  "turns": 32,
+  "cost_usd": 0.8291077999999998,
+  "input": 52,
+  "output": 18618,
+  "cache_read": 909019,
+  "cache_write": 34342,
+  "denials": [
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash"
+  ],
+  "result": "The network is finished: `build.py`, `weights.npz` and `explanation.md` are in the folder. In the last practice round it averaged **77.4**, and since round 2 every game has been a kill with a single shot. I used 3 of the 10 practice rounds and stopped there.\n\n**How it plays.** The player can't turn, so it always shoots at the centre of the screen, which is exactly the line between grid columns 19 and 20.\n- **Layer 1** adds up how much monster is left of that line (`a`) and how much is right of it (`b`).\n- **Layer 2** passes `a` and `b` through and adds `relu(a\u2212b)`, which lets the output work out `min(a, b)`.\n- **Output:** strafe left scores `a\u2212b`, strafe right scores `b\u2212a`, and fire scores `1000\u00b7(min(a,b) \u2212 0.4)`. So it fires as soon as the monster is clearly on both sides of the aim line, and otherwise strafes toward it.\n\n**What practice changed:**\n\n| Round | Rule | Mean | Result |\n|---|---|---|---|\n| 1 | Fire only when the monster is centred | 76.8 | 5/5 kills, but one game overshot and took two shots |\n| 2 | Fire once the aim line is inside the monster (threshold 0.7) | 75.0 | 5/5 kills, all with one shot |\n| 3 | Same rule, threshold lowered to 0.4 | 77.4 | 5/5 kills, all with one shot |\n\nRound 1 overshot because strafing keeps sliding, and the pistol fires about 4\u20135 tics after the button is pressed. Firing a little before the monster is centred lets that drift carry the aim onto it. Most of the differences between rounds come from where the monster spawned, which sets how far the player has to strafe.\n\n**Prediction:** about **76** on held-out games, likely between 72 and 80, and I'm about 80% confident it lands in that range. The main risks are an occasional miss, which costs that game roughly 15\u201320 points, or a monster spawning off-screen. That never happened in practice, but if it did the network would just keep strafing left and might never find it.\n\nI checked the network on frames I built by hand and on the inputs recorded in practice. I also left a small te"
+ },
+ "audit": {
+  "rebuilt": true,
+  "matches_submitted": true,
+  "flags": [
+   "command: looking outside the workspace: ./practice; ls practice_runs 2>/dev/null; ls /Users/linovaldovinos/Documents/LatentPlayground/doom-weights/runs/basic-objects-b10-20261104-211208-opus 2>/dev/nu"
+  ],
+  "notes": [],
+  "tool_counts": {
+   "Read": 1,
+   "Bash": 24,
+   "Write": 4,
+   "Edit": 2
+  },
+  "nonzero_weights": 1211,
+  "total_weights": 477955
+ },
+ "score": {
+  "mean": 78.04,
+  "se": 0.6021470318265877,
+  "median": 75.0,
+  "kills_mean": 1.0,
+  "action_share": [
+   0.3857,
+   0.2954,
+   0.3189
+  ]
+ }
+}

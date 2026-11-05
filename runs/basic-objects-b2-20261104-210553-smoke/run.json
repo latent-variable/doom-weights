@@ -1,0 +1,53 @@
+{
+ "id": "basic-objects-b2-20261104-210553-smoke",
+ "scenario": "basic",
+ "mode": "objects",
+ "budget": 2,
+ "model": "haiku",
+ "effort": null,
+ "workspace": "/private/tmp/doom-weights-ws/basic-objects-b2-20261104-210553-smoke/workspace",
+ "started": "20261104-210553",
+ "exit": 0,
+ "builder_minutes": 3.9,
+ "usage": {
+  "turns": 28,
+  "cost_usd": 0.05280323999999999,
+  "input": 56,
+  "output": 43922,
+  "cache_read": 1505144,
+  "cache_write": 78926,
+  "denials": [
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash"
+  ],
+  "result": "The network is built and saved in `weights.npz`, with `build.py` and `explanation.md` alongside it. Practice round 2 averaged 75.0 over 5 games, and all 5 ended in a kill. Both practice rounds are used up.\n\n**How it works:** The crosshair is the boundary between columns 19 and 20. The network fires only when the monster covers both of those columns, since a hitscan shot misses otherwise. When it doesn't, it strafes toward whichever side holds more monster. With nothing visible, every score is 0 and the tie goes to MOVE_LEFT. Each weight is set by a rule written next to it in `build.py`. Nothing is fitted.\n\n**Practice results:**\n- Round 1 averaged 66.4 (min 19). One game took 16 attack steps. The gate was firing on partial overlap of column 19 alone.\n- I changed the gate to require both centre columns, which is what the crosshair geometry needs. Round 2 averaged 75.0 (min 67, median 67, SE about 5.5).\n\n**Caveats:**\n- I changed the gate after reading the round-1 report. That was a reasoned fix for an observed miss, not a fitted number. But round 2 was scored on the same 5 games I had already seen, so it is not held-out evidence.\n- My prediction for the held-out average is about **70** (plausible range 55\u201385). My confidence is moderate on the mechanism and low on the number, because it rests on 5 games.\n- Known failure modes: a monster outside the 90\u00b0 field of view gives no signal, and the network can't search for it. Vertical misalignment and the monster moving between steps can also make a shot miss.\n\n**Checks:** `test_synthetic.py` runs 12 hand-built frames, and all pass. `weights.npz` has the required keys, shapes and float32 dtype.\n\n**Leftovers:** I couldn't delete the `__pycache__` folders from my test imports without approval. They're harmless and can go whenever you like. The `practice_runs/` folder was written by `./practice` itself."
+ },
+ "audit": {
+  "rebuilt": true,
+  "matches_submitted": true,
+  "flags": [],
+  "notes": [],
+  "tool_counts": {
+   "Read": 2,
+   "Bash": 17,
+   "Write": 6,
+   "Edit": 2
+  },
+  "nonzero_weights": 2536,
+  "total_weights": 477955
+ },
+ "score": {
+  "mean": 77.45666666666666,
+  "se": 0.6109958304833829,
+  "median": 75.0,
+  "kills_mean": 1.0,
+  "action_share": [
+   0.3939,
+   0.3156,
+   0.2905
+  ]
+ }
+}

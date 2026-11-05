@@ -1,0 +1,5 @@
+# Fable 5.1 reruns: the 2026-11-04 attempts were stopped by the main weekly limit
+--scenario basic --mode pixels --budget 10 --model claude-fable-5-1 --max-minutes 90 --tag fable
+--scenario deadly_corridor --mode objects --budget 0 --model claude-fable-5-1 --max-minutes 90 --tag fable
+--scenario deadly_corridor --mode objects --budget 10 --model claude-fable-5-1 --max-minutes 90 --tag fable
+--scenario defend_the_center --mode pixels --budget 10 --model claude-fable-5-1 --max-minutes 90 --tag fable

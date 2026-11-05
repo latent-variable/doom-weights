@@ -1,0 +1,11 @@
+# Qwen3.8-Flash-Next on this Mac (mlx-serve), through Pi: no budget, one at a time
+--agent pi --scenario basic --mode objects --budget 0 --max-minutes 90 --tag qwen
+--agent pi --scenario health_gathering --mode objects --budget 0 --max-minutes 90 --tag qwen
+--agent pi --scenario defend_the_center --mode objects --budget 0 --max-minutes 90 --tag qwen
+--agent pi --scenario basic --mode pixels --budget 0 --max-minutes 90 --tag qwen
+--agent pi --scenario health_gathering --mode pixels --budget 0 --max-minutes 90 --tag qwen
+--agent pi --scenario basic --mode pixels --budget 10 --max-minutes 90 --tag qwen
+--agent pi --scenario defend_the_center --mode objects --budget 10 --max-minutes 90 --tag qwen
+--agent pi --scenario deadly_corridor --mode objects --budget 0 --max-minutes 90 --tag qwen
+--agent pi --scenario deadly_corridor --mode objects --budget 10 --max-minutes 90 --tag qwen
+--agent pi --scenario defend_the_center --mode pixels --budget 0 --max-minutes 90 --tag qwen

@@ -1,0 +1,63 @@
+{
+ "id": "basic-pixels-b0-20261105-000700-opus-rep2",
+ "agent": "claude",
+ "scenario": "basic",
+ "mode": "pixels",
+ "budget": 0,
+ "model": "claude-opus-5-5",
+ "effort": null,
+ "workspace": "/private/tmp/doom-weights-ws/basic-pixels-b0-20261105-000700-opus-rep2/workspace",
+ "started": "20261105-000700",
+ "exit": 0,
+ "builder_minutes": 7.4,
+ "usage": {
+  "turns": 41,
+  "cost_usd": 1.5040384000000004,
+  "input": 62,
+  "output": 35322,
+  "cache_read": 1564072,
+  "cache_write": 60567,
+  "denials": [
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash"
+  ],
+  "result": "I wrote the network's weights by hand. `build.py`, `weights.npz` and `explanation.md` are in the folder, and the harness's own loader accepts the weights. I tested it only on frames I drew myself, never on the game, so how it scores in real Doom is untested.\n\n**What the network does:**\n1. **Layer 1 finds red.** Each cell gets a redness score, 2R \u2212 G \u2212 B, which is zero for any shade of gray however bright. One unit for each column in each of three horizontal bands of the screen fires when that spot is redder than the rest of its column and redder than the same band in other columns. That cancels colour that spans a whole wall stripe or the whole floor. The bottom rows are ignored because the pistol and hand are reddish.\n2. **Layer 2 works out the aim.** One pair of units measures whether the red is mostly left or right of the crosshair. Another pair measures whether there is red on both sides of the crosshair, meaning the crosshair is on the monster.\n3. **Output:** shoot only when the crosshair is on the monster; otherwise strafe toward the red. With nothing red on screen it strafes left and never fires blind, so no ammo is wasted.\n\n**Checks on frames I drew:**\n- **Steering:** I placed discs of different sizes and shades of red on a gray room with noise, the weapon, and coloured stripes on the wall. The network moves the right way or shoots correctly in over 99% of frames when the stripes are faint. The only misses are tiny, dim discs about 5 px off-centre, where it takes one more step instead of firing.\n- **When it fires:** only when the crosshair is well inside the monster's outline (within about 55\u201380% of its radius from the centre). It never fired in 300 frames with no monster.\n- **Simple simulation:** I ran 60 episodes with my own guess at Doom's strafing momentum. Every one ended in a kill with a single shot, averaging 75.\n\n**Prediction:** an average of about **70** on held-out games, likely between 55 and 85, with moderate confidence. The main risk is that the"
+ },
+ "audit": {
+  "rebuilt": true,
+  "matches_submitted": true,
+  "flags": [
+   "closed_loop_synth.py:12: randomness (random features are fine; random search is not): rng = np.random.default_rng(5)",
+   "stress_synth.py:9: randomness (random features are fine; random search is not): rng = np.random.default_rng(1)",
+   "test_synth.py:9: randomness (random features are fine; random search is not): rng = np.random.default_rng(0)",
+   "window_synth.py:12: a long loop (search?): fire = [mx - 160 for mx in range(120, 201) if net.act(w, frame(mx, 110, rad, red, 0.01)) == 2]",
+   "window_synth.py:15: a long loop (search?): for t in range(300):"
+  ],
+  "notes": [],
+  "tool_counts": {
+   "Read": 2,
+   "Bash": 26,
+   "Write": 7,
+   "Edit": 5
+  },
+  "nonzero_weights": 302774,
+  "total_weights": 477955
+ },
+ "score": {
+  "mean": -300.0,
+  "se": 0.0,
+  "median": -300.0,
+  "kills_mean": 0.0,
+  "action_share": [
+   0.9696,
+   0.0304,
+   0.0
+  ]
+ }
+}

@@ -1,0 +1,54 @@
+{
+ "id": "defend_the_center-pixels-b10-20261104-211216-opus",
+ "scenario": "defend_the_center",
+ "mode": "pixels",
+ "budget": 10,
+ "model": "claude-opus-5-5",
+ "effort": null,
+ "workspace": "/private/tmp/doom-weights-ws/defend_the_center-pixels-b10-20261104-211216-opus/workspace",
+ "started": "20261104-211216",
+ "exit": 0,
+ "builder_minutes": 13.2,
+ "usage": {
+  "turns": 69,
+  "cost_usd": 2.8236108,
+  "input": 88,
+  "output": 63840,
+  "cache_read": 3198374,
+  "cache_write": 113348,
+  "denials": [
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash",
+   "Bash"
+  ],
+  "result": "The network averages about **21 points per game** in practice: 15 games with the final weights scored a mean of 21.1, ranging from 16 to 24. All three files are in the folder: `build.py` (takes about 0.1 s), `weights.npz` and `explanation.md`.\n\n**How it plays:**\n- **Seeing monsters:** 40 first-layer units each check one screen column for anything that isn't the brown wall's colour. They only look at rows 9\u201314, a band that never shows sky or floor, so corpses and blood on the floor are invisible to it.\n- **Aiming:** it turns toward whichever side has more monster on screen, which favours the closest monster. It shoots only when a monster covers the crosshair. With nothing on screen, it keeps turning left to scan.\n- **Brake:** a held turn speeds up after a moment and starts skipping past narrow targets. So when a big monster is just beside the crosshair, it presses attack for one step, which resets the turn to a slow, precise one.\n- **Saving bullets:** it can tell from the pistol sprite when the gun is recoiling. It doesn't press attack then, because that fires a second shot into a monster that is already dying. This check is turned off once ammo runs out, so it can still punch.\n\n**Practice scores** (mean of 5 games per round):\n\n| Round | What changed | Mean score |\n|---|---|---|\n| 1 | All-zero weights | \u22121.0 |\n| 2 | Column detectors, shoot at crosshair | 8.0 |\n| 3 | Moved the detection band down (the sky had caused wasted shots) | 6.4 |\n| 4 | Added the brake | 13.4 |\n| 5 | Added the left-scan bias | 20.0 |\n| 6, 7 | Added the bullet-saving check | 21.4, 21.4 |\n| 8 | Final weights | 20.6 |\n\nMost games now end the same way: it spends all 26 bullets for 20\u201325 kills, then dies once the ammo is gone. Since each kill is +1 and death is \u22121, that is close to the 25-point ceiling for bullet kills.\n\n**Prediction:** about 21 on the held-out games; I'm roughly 80% confident the average lands between 19 and 23. The main risks are screens practice never showed, such as a heavy red "
+ },
+ "audit": {
+  "rebuilt": true,
+  "matches_submitted": true,
+  "flags": [],
+  "notes": [],
+  "tool_counts": {
+   "Read": 13,
+   "Bash": 40,
+   "Write": 7,
+   "Edit": 8
+  },
+  "nonzero_weights": 28937,
+  "total_weights": 478083
+ },
+ "score": {
+  "mean": 20.32,
+  "se": 0.3501457128139943,
+  "median": 21.0,
+  "kills_mean": 21.32,
+  "action_share": [
+   0.6234,
+   0.1015,
+   0.2751
+  ]
+ }
+}
