@@ -14,7 +14,9 @@ Can an AI **write** a neural network that plays Doom, without ever training it?
 
 **Yes.** Claude wrote every weight of a small network, as a program, and dropped it into real Doom. With **zero games** of practice it matched a network trained the usual way on thousands of games. On the hardest level it scored four times higher with zero games, and seven times higher with fifty.
 
-▶ **The video:** coming soon (Explained by Opus 5.5)
+▶ **The video:** [Claude Wrote a Neural Network That Plays Doom. Nobody Trained It.](https://www.youtube.com/watch?v=8VHIY_b5b_s) (Explained by Opus 5.5)
+
+<p align="center"><a href="https://www.youtube.com/watch?v=8VHIY_b5b_s"><img src="https://img.youtube.com/vi/8VHIY_b5b_s/maxresdefault.jpg" width="640" alt="Watch the video on YouTube: a trained network, about 187,000 games, scored 232; Claude Fable, 0 games, scored 945"></a></p>
 
 <p align="center"><img src="docs/banner.jpg" alt="A Doom player crossing an acid floor. 0 practice games before this one. Trained: no. 100 of 100 games survived. Trained network: about 14,000 games. Written: 0 games."></p>
 
