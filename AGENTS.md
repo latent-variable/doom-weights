@@ -38,3 +38,5 @@ The README is the human story; this file is the agent's.
 - **PPO logs moves, not games.** Any "games of training" figure is an estimate (moves over each checkpoint's game length);
   log episode counts in the next PPO run if a count matters.
 - **Level 4 (`deadly_corridor`) is the hard one**: PPO never beat holding forward (231.8) in 3M moves.
+
+- Security gate: `bash scripts/audit-deps.sh && bash scripts/audit-code.sh` (no pre-merge entry point or CI here; run it by hand). Fix a finding first; carry one only with its reason (`osv-scanner.toml`, or a `nosemgrep` / `gitleaks:allow` comment at the line).
